@@ -3,20 +3,21 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, population_size, gene_size, selection_mode = 0, cross_points = 2, mutation = 0.05):
-		self.population_size = population_size
+	def __init__(self, pop_size, gene_size, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
+		self.population_size = pop_size + 1
 		self.gene_size = gene_size
 		self.selection_mode = selection_mode
 		self.cross_points = cross_points
 		self.mutation = mutation
+		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
 		self.generation = 0
 
-		pop_id = range(population_size)
+		pop_id = range(self.population_size)
 
 		#cria a população inicial e inicializa a lista de avaliação de indivíduos
-		for i in range(population_size):
+		for i in range(self.population_size):
 			self.population.append(random.sample(pop_id, gene_size))
 			self.individual_performance.append(0)
 
@@ -58,9 +59,6 @@ class GeneticModel():
 			#corrige 0.9999...
 			percentual_range[-1][1] = 1.0
 
-			for p in percentual_range:
-				print p
-
 			#pais selecionados
 			parents_list = []
 
@@ -77,18 +75,15 @@ class GeneticModel():
 			parents_list.append(best_pos)
 
 			#seleciona os pais baseado na roleta
-			for i in range((self.population_size/2) - 1):
+			for i in range(self.population_size - 1):
 				x = random.random()
 				for j, p in enumerate(percentual_range):
 					if((x >= p[0]) and (x <= p[1])):
 						parents_list.append(j)
 						break
-
+						
 			#realiza o crossover
 			self.__cross(parents_list)
-
-			#realiza a mutação
-			self.__mutate()
 
 		#roleta
 		elif(self.selection_mode == 1):
@@ -131,7 +126,7 @@ class GeneticModel():
 			parents_list.append(best_pos)
 
 			#seleciona os pais baseado na roleta
-			for i in range((self.population_size/2) - 1):
+			for i in range(self.population_size - 1):
 				x = random.random()
 				p = 0.0
 				index = 0
@@ -144,9 +139,6 @@ class GeneticModel():
 
 			#realiza o crossover
 			self.__cross(parents_list)
-
-			#realiza a mutação
-			self.__mutate()
 
 		#torneio
 		else:
@@ -169,12 +161,12 @@ class GeneticModel():
 			pop_id = range(self.population_size)
 
 			#realiza o torneio
-			for i in range((self.population_size/2) - 1):
+			for i in range(self.population_size - 1):
 				p1 = random.choice(pop_id)
 				p2 = random.choice(pop_id)
 
 				#garante que p1 e p2 são diferentes
-				while(p1 != p2):
+				while(p1 == p2):
 					p1 = random.choice(pop_id)
 					p2 = random.choice(pop_id)
 
@@ -186,42 +178,64 @@ class GeneticModel():
 			#realiza o crossover
 			self.__cross(parents_list)
 
-			#realiza a mutação
-			self.__mutate()
-
 	def __cross(self, selected_parents):
 
 		#reserva o melhor pai
 		best_parent = self.population[selected_parents[0]]
-		print "Selected Parents: ", selected_parents
 
 		#cria a nova população
 		new_population = []
+		new_population.append(best_parent)
 
-		for i in range(0, len(selected_parents), 2):
-			child1 = self.population[selected_parents[i]][ : self.gene_size/2] + \
-				self.population[selected_parents[i + 1]][self.gene_size/2 : ]
+		while(len(new_population) < self.population_size):
+			parent1 = 0
+			parent2 = 0
 
-			child2 = self.population[selected_parents[i]][self.gene_size/2 : ] + \
-				self.population[selected_parents[i + 1]][ : self.gene_size/2]
+			current_cross_l = random.random()
+			if(current_cross_l < self.cross_l):
+				#garante que os pais serão diferentes
+				while(parent1 == parent2):
+					parent1 = random.randint(0, len(selected_parents) - 1)
+					parent2 = random.randint(0, len(selected_parents) - 1)
 
-			print "F1: ", child1, "\n"
-			print "F2: ", child2, "\n"
+				points = random.sample(range(0, self.population_size), self.cross_points)
+				points.sort()
 
+				child1 = []
+				child2 = []
+				for i in range(len(points)):
+					if(i == 0):
+						if((i % 2) == 0):
+							child1 += self.population[selected_parents[parent1]][ :points[i]]
+							child2 += self.population[selected_parents[parent2]][ :points[i]]
+						else:
+							child1 += self.population[selected_parents[parent2]][ :points[i]]
+							child2 += self.population[selected_parents[parent1]][ :points[i]]
+					else:
+						if((i % 2) == 0):
+							child1 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+							child2 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+						else:
+							child1 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+							child2 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
 
-			new_population.append(child1)
-			new_population.append(child2)
+				if((len(points) % 2) == 0):
+					child1 += self.population[selected_parents[parent1]][points[-1]: ]
+					child2 += self.population[selected_parents[parent2]][points[-1]: ]
+				else:
+					child1 += self.population[selected_parents[parent2]][points[-1]: ]
+					child2 += self.population[selected_parents[parent1]][points[-1]: ]
 
-		#retorna o melhor pai para a população
-		new_population[0] = best_parent
-
-		for p in new_population:
-			print p
+				new_population.append(child1)
+				new_population.append(child2)
 
 		self.population = new_population
 
+		#inicializa mutação
+		self.__mutate()
+
 	def __mutate(self):
-		for i in range(len(self.population)):
+		for i in range(1, len(self.population)):
 			for g in range(self.gene_size):
 				x = random.random()
 				if(x < self.mutation):
