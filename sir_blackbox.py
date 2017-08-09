@@ -1,4 +1,3 @@
-import igraph
 import random
 import scipy
 from scipy import random
@@ -37,16 +36,14 @@ class SIRBB():
 
 		#now infect a few to infect at t = 0
 		self.indexCases = []
-		for i in xrange(I):
-			indexCase = self.sAgentList[i]
-			self.indexCases.append(indexCase)
-			self.infectAgent(indexCase)
-			self.iAgentList.append(indexCase)
-
+		for infected in I:
+			self.indexCases.append(infected)
+			self.infectAgent(infected)
+			self.iAgentList.append(infected)
 
 	# heap-based method for recovering agents using an arbitrary distribution of recovery times
 	def infectAgent(self,agent):
-		self.sAgentList.remove(agent)
+		#self.sAgentList.remove(agent)
 
 		#uncomment for exponentially distributed recovery times
 		recoveryTime = self.t + scipy.random.exponential(1/self.g)

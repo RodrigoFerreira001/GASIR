@@ -23,9 +23,11 @@ class GeneticModel():
 
 
 	def parents_select(self):
+		#print "- Seleção de Pais:"
 		#roleta-russa
 
 		if(self.selection_mode == 0):
+			#print "- Método selecionado: 0"
 
 			#somatório de todos os desempenhos(invertidos)
 			inverse_total_performance = 0.0
@@ -73,6 +75,7 @@ class GeneticModel():
 
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
+			#print "- Melhor pai pos: ", best_pos
 
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
@@ -81,12 +84,13 @@ class GeneticModel():
 					if((x >= p[0]) and (x <= p[1])):
 						parents_list.append(j)
 						break
-						
+
 			#realiza o crossover
 			self.__cross(parents_list)
 
 		#roleta
 		elif(self.selection_mode == 1):
+			#print "- Método selecionado: 1"
 
 			#somatório de todos os desempenhos(invertidos)
 			inverse_total_performance = 0.0
@@ -124,6 +128,7 @@ class GeneticModel():
 
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
+			#print "- Melhor pai pos: ", best_pos
 
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
@@ -135,13 +140,14 @@ class GeneticModel():
 					p += performance[index]
 					index += 1
 
-				parents_list.append(index)
+				parents_list.append(index - 1)
 
 			#realiza o crossover
 			self.__cross(parents_list)
 
 		#torneio
 		else:
+			#print "- Método selecionado: 2"
 
 			#pais selecionados
 			parents_list = []
@@ -157,6 +163,7 @@ class GeneticModel():
 
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
+			#print "- Melhor pai pos: ", best_pos
 
 			pop_id = range(self.population_size)
 
@@ -179,9 +186,16 @@ class GeneticModel():
 			self.__cross(parents_list)
 
 	def __cross(self, selected_parents):
-
+		#print "\n- Cruzamento: "
 		#reserva o melhor pai
 		best_parent = self.population[selected_parents[0]]
+
+		#print "- Melhor pai:"
+		#print best_parent
+
+		#print "\n-Pais selecionados: "
+		#for parent in selected_parents:
+			#print parent
 
 		#cria a nova população
 		new_population = []
@@ -229,12 +243,13 @@ class GeneticModel():
 				new_population.append(child1)
 				new_population.append(child2)
 
-		self.population = new_population
+		self.population = new_population[:]
 
 		#inicializa mutação
 		self.__mutate()
 
 	def __mutate(self):
+		#print "\n- Mutação: "
 		for i in range(1, len(self.population)):
 			for g in range(self.gene_size):
 				x = random.random()

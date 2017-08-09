@@ -4,7 +4,6 @@ from genetic_model import GeneticModel
 import copy
 import igraph
 import random
-import networkx as nx
 import matplotlib.pyplot as plt
 import sys
 
@@ -29,6 +28,7 @@ if __name__ == '__main__':
 	#initial conditions (# of people in each state)
 	S = int(sys.argv[1])
 	I = int(sys.argv[2])
+	gene_size = int(sys.argv[3])
 
 	#network specific parameters
 	p = .05 #this controls the likelihood that connections will be rewired
@@ -60,27 +60,41 @@ if __name__ == '__main__':
 		adjacencyList[edge.target].append(edge.source)
 
 
-	ag = GeneticModel(100, S)
+	#modelo genático
+	ag = GeneticModel(S, gene_size)
 
-	while ag.generation < 100:
-		for ind in ag.population:
-			
+	iAgentList = random.sample(range(S), I)
+	print "Infectados:"
+	print iAgentList
 
-	for e, indiviual in enumerate(population):
-		#S
-		sAgentList = range(S)
+	while ag.generation < 2:
+		for i, ind in enumerate(ag.population):
 
-		#R
-		rAgentList = []
+			#Susceptible
+			sAgentList = range(S)
+			for infected in iAgentList:
+				if(infected in sAgentList):
+					sAgentList.remove(infected)
 
-		#Realiza a vacinação
-		for i in range(len(indiviual)):
-			if(indiviual[i] == "1"):
-				rAgentList.append(i)
-				sAgentList.remove(i)
+			#R
+			rAgentList = []
 
-		random.shuffle(sAgentList)
-		sirbb = SIRBB(adjacencyList, b, g, sAgentList, I, rAgentList)
-		sirbb.run()
+			#realiza vacinação
+			for v in ind:
+				if(v in iAgentList):
+					iAgentList.remove(v)
+				else:
+					sAgentList.remove(v)
 
-		print "Indivíduo: ",e," Infectados: ", sirbb.infectedCount
+				rAgentList.append(v)
+
+
+			random.shuffle(sAgentList)
+			sirbb = SIRBB(adjacencyList, b, g, sAgentList, iAgentList, rAgentList)
+
+			sirbb.run()
+
+			ag.individual_performance[i] = sirbb.infectedCount
+
+		#realiza métodos do ag
+		ag.parents_select()
