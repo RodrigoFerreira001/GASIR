@@ -57,7 +57,7 @@ if __name__ == '__main__':
 		print i,": ", ind
 
 
-	while ag.generation < 2:
+	while ag.generation < 100:
 		for i, ind in enumerate(ag.population):
 
 			#Susceptible
@@ -68,17 +68,17 @@ if __name__ == '__main__':
 
 			#Infected
 			iAgentList = iList[:]
-			print "\n- Suscetíveis: "
-			print sAgentList
-
-			print "\n- Infectados:"
-			print iAgentList
-
-			print "\n- Recuperados:"
-			print rAgentList
-
-			print "\n- Vacinados:"
-			print ind
+			# print "\n- Suscetíveis: "
+			# print sAgentList
+			#
+			# print "\n- Infectados:"
+			# print iAgentList
+			#
+			# print "\n- Recuperados:"
+			# print rAgentList
+			#
+			# print "\n- Vacinados:"
+			# print ind
 
 			#realiza vacinação
 			for v in ind:
@@ -89,16 +89,16 @@ if __name__ == '__main__':
 
 				rAgentList.append(v)
 
-			print "\n ---- Vacinação ----- "
-
-			print "\n- Suscetíveis: "
-			print sAgentList
-
-			print "\n- Infectados:"
-			print iAgentList
-
-			print "\n- Recuperados:"
-			print rAgentList
+			# print "\n ---- Vacinação ----- "
+			#
+			# print "\n- Suscetíveis: "
+			# print sAgentList
+			#
+			# print "\n- Infectados:"
+			# print iAgentList
+			#
+			# print "\n- Recuperados:"
+			# print rAgentList
 
 			#random.shuffle(sAgentList)
 			sirbb = SIRBB(adjacencyList, sAgentList, iAgentList, b, g)
