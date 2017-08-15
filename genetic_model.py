@@ -12,6 +12,8 @@ class GeneticModel():
 		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
+		self.best = []
+		self.best_performance = 0
 		self.generation = 0
 
 		pop_id = range(self.population_size)
@@ -75,7 +77,11 @@ class GeneticModel():
 
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
-			#print "- Melhor pai pos: ", best_pos
+			self.best_performance = self.individual_performance[best_pos]
+			print "- Melhor pai pos: ", best_pos
+			print "- infectdos: ", self.individual_performance[best_pos]
+			print "- o próprio: ", self.population[best_pos]
+
 
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
@@ -188,7 +194,10 @@ class GeneticModel():
 	def __cross(self, selected_parents):
 		#print "\n- Cruzamento: "
 		#reserva o melhor pai
-		best_parent = self.population[selected_parents[0]]
+		print "POS: ", selected_parents[0]
+		best_parent = self.population[selected_parents[0]][:]
+		print "The best: ", best_parent
+		self.best = best_parent[:]
 
 		#print "- Melhor pai:"
 		#print best_parent
@@ -243,6 +252,7 @@ class GeneticModel():
 				new_population.append(child1)
 				new_population.append(child2)
 
+		#remover ultimo filho?
 		self.population = new_population[:]
 
 		#inicializa mutação

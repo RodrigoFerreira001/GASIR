@@ -1,11 +1,26 @@
+# -*- coding: utf-8 -*-
+
+#a simple network-based SIR model written in Python
+#Jon Zelner
+#University of Michigan
+#October 20, 2009
+
+#import this file (networkSIRWithClasses) to use the model components
+#or run as 'python networkSIRWithClasses.py' to do sample runs
+
+
+import igraph
 import random
+import copy
+import pylab as pl
 import scipy
 from scipy import random
 import heapq
+import sys
 
 #model constructor
-class SIRBB():
-	def __init__(self, adjacencyList, S, I, b, g):
+class simpleNetworkSIRModel():
+	def __init__(self, adjacencyList, sAgentList, newIList, b = .2,  g = .01):
 
 		#parameters
 		self.b = b
@@ -16,8 +31,12 @@ class SIRBB():
 
 		self.adjacencyList = adjacencyList
 
+		#to use iGraph's internal method to do this, comment
+		#out above and uncomment the following:
+		#self.adjacencyList = graph.get_adjlist()
+
 		#going to use this to store the *indices* of agents in each state
-		self.sAgentList = S[:]
+		self.sAgentList = sAgentList[:]
 		self.iAgentList = []
 		self.rAgentList = []
 
@@ -32,15 +51,30 @@ class SIRBB():
 		#efficient implementation
 		self.recoveryTimesHeap = []
 
-		#now infect a few to infect at t = 0
-		for infected in I:
-			self.infectAgent(infected)
-			self.iAgentList.append(infected)
+		#shuffle the list so there's no accidental correlation in agent actions
+		#random.shuffle(allAgents)
 
-	# heap-based method for recovering agents using an arbitrary distribution of recovery times
+		#start with everyone susceptible
+		#self.sAgentList = copy.copy(allAgents)
+
+		Ilist = newIList[:]
+
+		#now infect a few to infect at t = 0
+		self.indexCases = []
+		for i in Ilist:
+			self.indexCases.append(i)
+			self.infectAgent(i)
+			self.iAgentList.append(i)
+
+		print "S: ",self.sAgentList
+		print "I: ",self.iAgentList
+		print "R: ",self.rAgentList
+
+# heap-based method for recovering agents using an arbitrary distribution of recovery times
+
 	def infectAgent(self,agent):
-		self.infectedCount += 1
 		self.sAgentList.remove(agent)
+		self.infectedCount += 1
 
 		#uncomment for exponentially distributed recovery times
 		recoveryTime = self.t + scipy.random.exponential(1/self.g)
@@ -129,7 +163,6 @@ class SIRBB():
 
 			#increment the time
 			self.t += 1
-			#print('t', self.t, 'numS', len(self.sAgentList), 'numI', len(self.iAgentList) )
 
 			#reshuffle the agent list so they step in a random order the next time
 			#around
@@ -137,3 +170,68 @@ class SIRBB():
 
 		#and when we're done, return all of the relevant information
 		return [self.sList, self.iList, self.rList, self.newIList]
+
+
+def graph_read(file_name):
+	graph_file = open(file_name, "r")
+	vertex_num = int(graph_file.readline())
+
+	adjacencyList = []
+	for i in range(vertex_num):
+		adjacencyList.append([])
+
+	for i in range(vertex_num):
+		temp = graph_file.readline().strip()
+		neighbors = temp.split(" ")
+		for neighbor in neighbors:
+			adjacencyList[i].append(int(neighbor))
+
+	return adjacencyList
+
+if __name__=='__main__':
+
+
+	#transmission parameters (daily rates scaled to hourly rates)
+	b = .02 / 24.0
+	g = .05 / 24.0
+
+	#initial conditions (# of people in each state)
+	S = 20
+	I = 4
+
+	#lê o grafo
+	adjacencyList = graph_read(sys.argv[1])
+
+	newSAgent = []
+	newSAgent = range(len(adjacencyList))
+
+	newIAgent = []
+	newIAgent.append(1)
+	newIAgent.append(2)
+	newIAgent.append(3)
+
+	newRAgent = []
+	newRAgent.append(5)
+	newRAgent.append(1)
+
+	for r in newRAgent:
+		if(r in newIAgent):
+			newIAgent.remove(r)
+
+		if(r in newSAgent):
+			newSAgent.remove(r)
+
+	print "Local S: \n", newSAgent
+	print "Local I: \n", newIAgent
+	print "Local R: \n", newRAgent
+
+	myNetworkModel = simpleNetworkSIRModel(adjacencyList, newSAgent, newIAgent, b = b, g = g)
+	networkResults = myNetworkModel.run()
+	print myNetworkModel.infectedCount
+
+	# myNetworkModel.graphPlot()
+	# numNetworkCases = sum(networkResults[3])
+	# pl.figure()
+	# pl.plot(networkResults[1], label = 'networked outbreak; ' + str(numNetworkCases) + ' cases')
+	# pl.xlabel('time')
+	# pl.ylabel('# infectious')

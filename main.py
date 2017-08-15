@@ -20,5 +20,6 @@ print "\n ----------------------------------------- \n"
 
 print "\nApós Mutação:\n"
 
-for individual in ag.population:
-	print individual
+print len(ag.population)
+for i, individual in enumerate(ag.population):
+	print i ,": ", individual
