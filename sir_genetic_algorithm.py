@@ -49,13 +49,10 @@ if __name__ == '__main__':
 	ag = GeneticModel(S, gene_size)
 
 	print "- GASIR -"
-	print "Tamanho da população: ", S
+	print "Tamanho da população: ", ag.population_size
 	print "Tamanho do gene: ", gene_size
 	print "Número de infectados: ", len(iList)
-
-	for i, ind in enumerate(ag.population):
-		print i,": ", ind
-
+	print " -- Início -- \n"
 
 	while ag.generation < 100:
 		for i, ind in enumerate(ag.population):
@@ -105,11 +102,11 @@ if __name__ == '__main__':
 
 			sirbb.run()
 
-			print "Performance de ", i, ": ", sirbb.infectedCount
-			ag.individual_performance[i] = sirbb.infectedCount
+			ag.individual_performance[i] = sirbb.infectedCount + 1
 
 		#realiza métodos do ag
 		ag.parents_select()
-
-print ag.best
-print ag.best_performance
+		print "\nGeração: ", ag.generation
+		print "Melhor: ", ag.best
+		print "Infectados: ", ag.best_performance
+		print " ------------------------ "

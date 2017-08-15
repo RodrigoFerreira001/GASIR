@@ -13,7 +13,7 @@ class GeneticModel():
 		self.population = []
 		self.individual_performance = []
 		self.best = []
-		self.best_performance = 0
+		self.best_performance = sys.maxint
 		self.generation = 0
 
 		pop_id = range(self.population_size)
@@ -22,7 +22,6 @@ class GeneticModel():
 		for i in range(self.population_size):
 			self.population.append(random.sample(pop_id, gene_size))
 			self.individual_performance.append(0)
-
 
 	def parents_select(self):
 		#print "- Seleção de Pais:"
@@ -77,11 +76,6 @@ class GeneticModel():
 
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
-			self.best_performance = self.individual_performance[best_pos]
-			print "- Melhor pai pos: ", best_pos
-			print "- infectdos: ", self.individual_performance[best_pos]
-			print "- o próprio: ", self.population[best_pos]
-
 
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
@@ -192,12 +186,35 @@ class GeneticModel():
 			self.__cross(parents_list)
 
 	def __cross(self, selected_parents):
-		#print "\n- Cruzamento: "
+
+		#cria a nova população
+		new_population = []
+
 		#reserva o melhor pai
-		print "POS: ", selected_parents[0]
 		best_parent = self.population[selected_parents[0]][:]
-		print "The best: ", best_parent
-		self.best = best_parent[:]
+
+		#Comente para ser realizado "elitismo guloso"
+		if(self.individual_performance[selected_parents[0]] < self.best_performance):
+			print "CASO 1:"
+			print "IND PERF: ", self.individual_performance[selected_parents[0]]
+			print "BEST PERF: ",self.best_performance
+			self.best = best_parent[:]
+			self.best_performance = self.individual_performance[selected_parents[0]]
+		else:
+			print "CASO 2:"
+			print "IND PERF: ", self.individual_performance[selected_parents[0]]
+			print "BEST PERF: ",self.best_performance
+			best_parent = self.best[:]
+
+		new_population.append(best_parent)
+
+		# if(self.best_performance > self.individual_performance[selected_parents[0]]):
+		# 	self.best = best_parent[:]
+		# 	self.best_performance = self.individual_performance[selected_parents[0]]
+		#
+		# else:
+		# 	new_population.append(self.best[:])
+
 
 		#print "- Melhor pai:"
 		#print best_parent
@@ -206,9 +223,6 @@ class GeneticModel():
 		#for parent in selected_parents:
 			#print parent
 
-		#cria a nova população
-		new_population = []
-		new_population.append(best_parent)
 
 		while(len(new_population) < self.population_size):
 			parent1 = 0
@@ -264,6 +278,7 @@ class GeneticModel():
 			for g in range(self.gene_size):
 				x = random.random()
 				if(x < self.mutation):
+					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
 					self.population[i][g] = (self.population[i][g] ** 2) % self.gene_size
 
 		#avança a geração
