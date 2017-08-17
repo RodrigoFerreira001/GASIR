@@ -192,19 +192,21 @@ class GeneticModel():
 
 		#reserva o melhor pai
 		best_parent = self.population[selected_parents[0]][:]
+		self.best = best_parent[:]
+		self.best_performance = self.individual_performance[selected_parents[0]]
 
 		#Comente para ser realizado "elitismo guloso"
-		if(self.individual_performance[selected_parents[0]] < self.best_performance):
-			print "CASO 1:"
-			print "IND PERF: ", self.individual_performance[selected_parents[0]]
-			print "BEST PERF: ",self.best_performance
-			self.best = best_parent[:]
-			self.best_performance = self.individual_performance[selected_parents[0]]
-		else:
-			print "CASO 2:"
-			print "IND PERF: ", self.individual_performance[selected_parents[0]]
-			print "BEST PERF: ",self.best_performance
-			best_parent = self.best[:]
+		# if(self.individual_performance[selected_parents[0]] < self.best_performance):
+		# 	print "CASO 1:"
+		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
+		# 	print "BEST PERF: ",self.best_performance
+		# 	self.best = best_parent[:]
+		# 	self.best_performance = self.individual_performance[selected_parents[0]]
+		# else:
+		# 	print "CASO 2:"
+		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
+		# 	print "BEST PERF: ",self.best_performance
+		# 	best_parent = self.best[:]
 
 		new_population.append(best_parent)
 
@@ -279,7 +281,7 @@ class GeneticModel():
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
-					self.population[i][g] = (self.population[i][g] ** 2) % self.gene_size
+					self.population[i][g] = (self.population[i][g] ** 2) % (self.population_size - 1)
 
 		#avança a geração
 		self.generation += 1

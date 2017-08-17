@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
 	S = len(adjacencyList)
 
-	ag = GeneticModel(S, gene_size)
+	ag = GeneticModel(S, gene_size, selection_mode = 2)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size

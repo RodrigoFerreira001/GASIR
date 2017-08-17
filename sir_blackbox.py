@@ -8,7 +8,8 @@ class SIRBB():
 	def __init__(self, adjacencyList, S, I, b, g):
 
 		#parameters
-		self.b = b
+		#self.b = b
+		self.b = 0.00006
 		self.g = g
 		self.t = 0
 
