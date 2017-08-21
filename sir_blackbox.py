@@ -5,17 +5,17 @@ import heapq
 
 #model constructor
 class SIRBB():
-	def __init__(self, adjacencyList, S, I, b, g):
+	def __init__(self, adjacencyList, adjacencyListWeigth, S, I, b, g):
 
 		#parameters
-		#self.b = b
-		self.b = 0.00006
+		self.b = b
 		self.g = g
 		self.t = 0
 
 		self.infectedCount = 0
 
 		self.adjacencyList = adjacencyList
+		self.adjacencyListWeigth = adjacencyListWeigth
 
 		#going to use this to store the *indices* of agents in each state
 		self.sAgentList = S[:]
@@ -37,6 +37,12 @@ class SIRBB():
 		for infected in I:
 			self.infectAgent(infected)
 			self.iAgentList.append(infected)
+
+	def first_in(self, element, mlist):
+		for i,e in enumerate(mlist):
+			if(e == element):
+				return i
+		return None
 
 	# heap-based method for recovering agents using an arbitrary distribution of recovery times
 	def infectAgent(self,agent):
@@ -100,10 +106,11 @@ class SIRBB():
 			#we only need to loop over the agents who are currently infectious
 			for iAgent in self.iAgentList:
 				#and then expose their network neighbors
-				for agent in self.adjacencyList[iAgent]:
+				for j, agent in enumerate(self.adjacencyList[iAgent]):
 					#given that the neighbor is susceptible
 					if agent in self.sAgentList:
-						if (random.random() < self.b):
+						#if (random.random() < self.b):
+						if (self.adjacencyListWeigth[iAgent][j] < self.b):
 							#and then it's the same as the other models
 							newI += self.infectAgent(agent)
 							tempIAgentList.append(agent)

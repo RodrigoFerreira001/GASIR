@@ -41,12 +41,20 @@ if __name__ == '__main__':
 
 	#lista de adjacencia
 	adjacencyList = graph_read(sys.argv[1])
+
+	#pesos
+	adjacencyListWeigth = []
+	for i, neighbors in enumerate(adjacencyList):
+		adjacencyListWeigth.append([])
+		for neighbor in neighbors:
+			adjacencyListWeigth[i].append(random.random())
+
 	iList = infecteds_read(sys.argv[2])
 	gene_size = int(sys.argv[3])
 
 	S = len(adjacencyList)
 
-	ag = GeneticModel(S, gene_size, selection_mode = 2)
+	ag = GeneticModel(100, gene_size, S, selection_mode = 2)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size
@@ -97,8 +105,8 @@ if __name__ == '__main__':
 			# print "\n- Recuperados:"
 			# print rAgentList
 
-			#random.shuffle(sAgentList)
-			sirbb = SIRBB(adjacencyList, sAgentList, iAgentList, b, g)
+			random.shuffle(sAgentList)
+			sirbb = SIRBB(adjacencyList, adjacencyListWeigth, sAgentList, iAgentList, b, g)
 
 			sirbb.run()
 

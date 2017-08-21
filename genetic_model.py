@@ -3,9 +3,10 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
+	def __init__(self, pop_size, gene_size, graph_size, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
 		self.population_size = pop_size + 1
 		self.gene_size = gene_size
+		self.graph_size = graph_size
 		self.selection_mode = selection_mode
 		self.cross_points = cross_points
 		self.mutation = mutation
@@ -192,6 +193,16 @@ class GeneticModel():
 
 		#reserva o melhor pai
 		best_parent = self.population[selected_parents[0]][:]
+
+		#remove duplicatas
+		temp = list(set(best_parent))
+		while((self.gene_size - len(temp)) > 0):
+			x = random.randint(0, self.graph_size - 1)
+			if(x not in temp):
+				temp.append(x)
+
+		best_parent = temp[:]
+
 		self.best = best_parent[:]
 		self.best_performance = self.individual_performance[selected_parents[0]]
 
@@ -281,7 +292,7 @@ class GeneticModel():
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
-					self.population[i][g] = (self.population[i][g] ** 2) % (self.population_size - 1)
+					self.population[i][g] = random.randint(0, self.graph_size - 1)
 
 		#avança a geração
 		self.generation += 1
