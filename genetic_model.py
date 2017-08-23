@@ -3,7 +3,7 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, graph_size, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
+	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
 		self.population_size = pop_size + 1
 		self.gene_size = gene_size
 		self.graph_size = graph_size
@@ -17,11 +17,24 @@ class GeneticModel():
 		self.best_performance = sys.maxint
 		self.generation = 0
 
-		pop_id = range(self.population_size)
+		pop_id = range(self.graph_size - 1)
 
 		#cria a população inicial e inicializa a lista de avaliação de indivíduos
 		for i in range(self.population_size):
-			self.population.append(random.sample(pop_id, gene_size))
+			temp = random.sample(pop_id, gene_size)
+
+			#remove infectados
+			for element in infecteds:
+				if(element in temp):
+					temp.remove(element)
+
+			#completa os elementos restantes
+			while((self.gene_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if((not x in temp) and (not x in infecteds)):
+					temp.append(x)
+
+			self.population.append(temp)
 			self.individual_performance.append(0)
 
 	def parents_select(self):
@@ -82,7 +95,7 @@ class GeneticModel():
 			for i in range(self.population_size - 1):
 				x = random.random()
 				for j, p in enumerate(percentual_range):
-					if((x >= p[0]) and (x <= p[1])):
+					if((x >= p[j][0]) and (x <= p[j][1])):
 						parents_list.append(j)
 						break
 
@@ -248,7 +261,7 @@ class GeneticModel():
 					parent1 = random.randint(0, len(selected_parents) - 1)
 					parent2 = random.randint(0, len(selected_parents) - 1)
 
-				points = random.sample(range(0, self.population_size), self.cross_points)
+				points = random.sample(range(0, self.gene_size), self.cross_points)
 				points.sort()
 
 				child1 = []

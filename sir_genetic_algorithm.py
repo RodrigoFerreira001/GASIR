@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
 	S = len(adjacencyList)
 
-	ag = GeneticModel(100, gene_size, S, selection_mode = 2)
+	ag = GeneticModel(100, gene_size, S, iList, selection_mode = 2)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size
@@ -86,6 +86,13 @@ if __name__ == '__main__':
 			# print ind
 
 			#realiza vacinação
+			# for v in ind:
+			# 	if(v in sAgentList):
+			# 		sAgentList.remove(v)
+			#
+			# 	rAgentList.append(v)
+
+			#realiza vacinação
 			for v in ind:
 				if(v in iAgentList):
 					iAgentList.remove(v)
@@ -110,7 +117,9 @@ if __name__ == '__main__':
 
 			sirbb.run()
 
-			ag.individual_performance[i] = sirbb.infectedCount + 1
+			ag.individual_performance[i] = sirbb.infectedCount
+			#ag.individual_performance[i] = len(sAgentList) -  len(sirbb.sAgentList)
+			#print len(sAgentList), " - ", len(sirbb.sAgentList), " = ",  len(sAgentList) -  len(sirbb.sAgentList)
 
 		#realiza métodos do ag
 		ag.parents_select()

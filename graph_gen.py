@@ -4,8 +4,8 @@ import igraph
 
 graph_file = open(sys.argv[1],"w")
 vertex_num = int(sys.argv[2])
-neighbors =  int(sys.argv[3])
-p = float(sys.argv[4])
+neighbors =  int(sys.argv[3]) #4
+p = float(sys.argv[4]) #0.2
 
 #make a small world graph with as many nodes as we have individuals
 graph = igraph.Graph.Watts_Strogatz(1, vertex_num, nei=neighbors, p = p)
