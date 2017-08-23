@@ -36,8 +36,10 @@ def infecteds_read(file_name):
 
 if __name__ == '__main__':
 	#transmission parameters (daily rates scaled to hourly rates)
-	b = .02 / 24.0
-	g = .05 / 24.0
+	# b = .02 / 24.0
+	# g = .05 / 24.0
+	b = .02
+	g = .05
 
 	#lista de adjacencia
 	adjacencyList = graph_read(sys.argv[1])
@@ -54,7 +56,7 @@ if __name__ == '__main__':
 
 	S = len(adjacencyList)
 
-	ag = GeneticModel(100, gene_size, S, iList, selection_mode = 2)
+	ag = GeneticModel(100, gene_size, S, iList, selection_mode = 0)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size
@@ -86,20 +88,20 @@ if __name__ == '__main__':
 			# print ind
 
 			#realiza vacinação
-			# for v in ind:
-			# 	if(v in sAgentList):
-			# 		sAgentList.remove(v)
-			#
-			# 	rAgentList.append(v)
-
-			#realiza vacinação
 			for v in ind:
-				if(v in iAgentList):
-					iAgentList.remove(v)
 				if(v in sAgentList):
 					sAgentList.remove(v)
 
 				rAgentList.append(v)
+
+			# #realiza vacinação
+			# for v in ind:
+			# 	if(v in iAgentList):
+			# 		iAgentList.remove(v)
+			# 	if(v in sAgentList):
+			# 		sAgentList.remove(v)
+			#
+			# 	rAgentList.append(v)
 
 			# print "\n ---- Vacinação ----- "
 			#
@@ -118,6 +120,7 @@ if __name__ == '__main__':
 			sirbb.run()
 
 			ag.individual_performance[i] = sirbb.infectedCount
+			#print i, ": ", sirbb.infectedCount
 			#ag.individual_performance[i] = len(sAgentList) -  len(sirbb.sAgentList)
 			#print len(sAgentList), " - ", len(sirbb.sAgentList), " = ",  len(sAgentList) -  len(sirbb.sAgentList)
 

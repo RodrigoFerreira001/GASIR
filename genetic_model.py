@@ -3,7 +3,7 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode = 0, cross_points = 1, mutation = 0.05, cross_l = 0.9):
+	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode = 0, cross_points = 2, mutation = 0.05, cross_l = 0.9):
 		self.population_size = pop_size + 1
 		self.gene_size = gene_size
 		self.graph_size = graph_size
@@ -95,7 +95,7 @@ class GeneticModel():
 			for i in range(self.population_size - 1):
 				x = random.random()
 				for j, p in enumerate(percentual_range):
-					if((x >= p[j][0]) and (x <= p[j][1])):
+					if((x >= p[0]) and (x <= p[1])):
 						parents_list.append(j)
 						break
 

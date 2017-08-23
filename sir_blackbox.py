@@ -57,21 +57,21 @@ class SIRBB():
 		#distributions
 
 		#lognormal with mean 1/g
-		#recoveryTime = self.t + scipy.random.lognormal(mean = scipy.log(1/g), sigma = scipy.log(20) )
-		#if recoveryTime <= self.t:
+		# recoveryTime = self.t + scipy.random.lognormal(mean = scipy.log(1/self.g), sigma = scipy.log(20) )
+		# if recoveryTime <= self.t:
 		#    recoveryTime = self.t + 1
 
 		#gamma distributed times with mean 1/g
-		#shape = 10.0
-		#recoveryTime = self.t + scipy.random.gamma(shape, scale = 1/(shape*self.g))
+		# shape = 10.0
+		# recoveryTime = self.t + scipy.random.gamma(shape, scale = 1/(shape*self.g))
 
 		#normally distributed with mean 1/g
-		#recoveryTime = self.t + scipy.random.normal(1/self.g, 10)
-		#if recoveryTime <= self.t:
+		# recoveryTime = self.t + scipy.random.normal(1/self.g, 10)
+		# if recoveryTime <= self.t:
 		#    recoveryTime = self.t + 1
 
 		#constant
-		#recoveryTime = self.t + (1/g)
+		#recoveryTime = self.t + (1/self.g)
 
 		#note that we're pushing a tuple onto the heap where the first element
 		#is the recovery time and the second one is the agent's unique ID
@@ -110,8 +110,8 @@ class SIRBB():
 				for j, agent in enumerate(self.adjacencyList[iAgent]):
 					#given that the neighbor is susceptible
 					if agent in self.sAgentList:
-						if (random.random() < self.b):
-						#if (self.adjacencyListWeigth[iAgent][j] < self.b):
+						#if (random.random() < self.b):
+						if (self.adjacencyListWeigth[iAgent][j] < self.b):
 							#and then it's the same as the other models
 							newI += self.infectAgent(agent)
 							tempIAgentList.append(agent)
