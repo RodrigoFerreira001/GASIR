@@ -15,6 +15,8 @@ class GeneticModel():
 		self.individual_performance = []
 		self.best = []
 		self.best_performance = sys.maxint
+		self.global_best = []
+		self.global_best_performance = sys.maxint
 		self.generation = 0
 
 		pop_id = range(self.graph_size - 1)
@@ -91,6 +93,11 @@ class GeneticModel():
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
 
+			#elitismo global
+			if(smallest_value < self.global_best_performance):
+				self.global_best_performance = smallest_value
+				self.global_best = self.population[best_pos][:]
+
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
 				x = random.random()
@@ -144,6 +151,11 @@ class GeneticModel():
 			parents_list.append(best_pos)
 			#print "- Melhor pai pos: ", best_pos
 
+			#elitismo global
+			if(smallest_value < self.global_best_performance):
+				self.global_best_performance = smallest_value
+				self.global_best = self.population[best_pos][:]
+
 			#seleciona os pais baseado na roleta
 			for i in range(self.population_size - 1):
 				x = random.random()
@@ -178,6 +190,11 @@ class GeneticModel():
 			#adiciona o melhor pai
 			parents_list.append(best_pos)
 			#print "- Melhor pai pos: ", best_pos
+
+			#elitismo global
+			if(smallest_value < self.global_best_performance):
+				self.global_best_performance = smallest_value
+				self.global_best = self.population[best_pos][:]
 
 			pop_id = range(self.population_size)
 

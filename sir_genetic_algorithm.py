@@ -36,10 +36,10 @@ def infecteds_read(file_name):
 
 if __name__ == '__main__':
 	#transmission parameters (daily rates scaled to hourly rates)
-	# b = .02 / 24.0
-	# g = .05 / 24.0
-	b = .02
-	g = .05
+	b = .02 / 24.0
+	g = .05 / 24.0
+	# b = .02
+	# g = .05
 
 	#lista de adjacencia
 	adjacencyList = graph_read(sys.argv[1])
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
 	S = len(adjacencyList)
 
-	ag = GeneticModel(100, gene_size, S, iList, selection_mode = 0)
+	ag = GeneticModel(100, gene_size, S, iList, selection_mode = 2)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size
@@ -130,3 +130,7 @@ if __name__ == '__main__':
 		print "Melhor: ", ag.best
 		print "Infectados: ", ag.best_performance
 		print " ------------------------ "
+
+	print "GLOBAL:"
+	print ag.global_best
+	print ag.global_best_performance

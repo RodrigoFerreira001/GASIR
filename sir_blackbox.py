@@ -38,12 +38,6 @@ class SIRBB():
 			self.infectAgent(infected)
 			self.iAgentList.append(infected)
 
-	def first_in(self, element, mlist):
-		for i,e in enumerate(mlist):
-			if(e == element):
-				return i
-		return None
-
 	# heap-based method for recovering agents using an arbitrary distribution of recovery times
 	def infectAgent(self,agent):
 		self.infectedCount += 1
@@ -110,8 +104,8 @@ class SIRBB():
 				for j, agent in enumerate(self.adjacencyList[iAgent]):
 					#given that the neighbor is susceptible
 					if agent in self.sAgentList:
-						#if (random.random() < self.b):
-						if (self.adjacencyListWeigth[iAgent][j] < self.b):
+						if (random.random() < self.b):
+						#if (self.adjacencyListWeigth[iAgent][j] < self.b):
 							#and then it's the same as the other models
 							newI += self.infectAgent(agent)
 							tempIAgentList.append(agent)
