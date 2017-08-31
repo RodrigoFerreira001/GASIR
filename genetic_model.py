@@ -231,9 +231,7 @@ class GeneticModel():
 			if(x not in temp):
 				temp.append(x)
 
-		best_parent = temp[:]
-
-		self.best = best_parent[:]
+		self.best = temp[:]
 		self.best_performance = self.individual_performance[selected_parents[0]]
 
 		#Comente para ser realizado "elitismo guloso"
@@ -322,7 +320,13 @@ class GeneticModel():
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
-					self.population[i][g] = random.randint(0, self.graph_size - 1)
+					r = random.randint(0, self.graph_size - 1);
+					if(r not in self.population[i]):
+						self.population[i][g] = r
+					else:
+						while(r in self.population[i]):
+							r = random.randint(0, self.graph_size - 1);
+						self.population[i][g] = r
 
 		#avança a geração
 		self.generation += 1

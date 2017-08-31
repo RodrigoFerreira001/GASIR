@@ -21,6 +21,8 @@ def graph_read(file_name):
 		for neighbor in neighbors:
 			adjacencyList[i].append(int(neighbor))
 
+	graph_file.close()
+
 	return adjacencyList
 
 def infecteds_read(file_name):
@@ -32,6 +34,8 @@ def infecteds_read(file_name):
 	for infected in temp.split(" "):
 		infecteds.append(int(infected))
 
+	infecteds_file.close()
+	
 	return infecteds
 
 if __name__ == '__main__':
@@ -134,3 +138,7 @@ if __name__ == '__main__':
 	print "GLOBAL:"
 	print ag.global_best
 	print ag.global_best_performance
+
+	result = open(sys.argv[4], "a+")
+	result.write(str(ag.global_best) + "\n")
+	result.close()
