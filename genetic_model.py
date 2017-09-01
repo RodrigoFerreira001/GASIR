@@ -36,6 +36,7 @@ class GeneticModel():
 				if((not x in temp) and (not x in infecteds)):
 					temp.append(x)
 
+			print temp
 			self.population.append(temp)
 			self.individual_performance.append(0)
 

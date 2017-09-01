@@ -2,26 +2,27 @@
 from sir_blackbox import SIRBB
 from genetic_model import GeneticModel
 import copy
-import igraph
+from igraph import *
 import random
 import matplotlib.pyplot as plt
 import sys
 
 def graph_read(file_name):
-	graph_file = open(file_name, "r")
-	vertex_num = int(graph_file.readline())
+	g = Graph.Read_Ncol(file_name)
+	g.simplify()
 
 	adjacencyList = []
-	for i in range(vertex_num):
+	for i in range(g.vcount()):
 		adjacencyList.append([])
 
-	for i in range(vertex_num):
-		temp = graph_file.readline().strip()
-		neighbors = temp.split(" ")
-		for neighbor in neighbors:
-			adjacencyList[i].append(int(neighbor))
+	#adjacency list
+	for edge in g.es: #looping over the graph's edge sequence
+		#indexing adjacency by node ID,so we can do quick lookups
+		adjacencyList[edge.source].append(edge.target)
+		adjacencyList[edge.target].append(edge.source)
 
-	graph_file.close()
+	print g.vcount()
+	print g.ecount()
 
 	return adjacencyList
 
@@ -35,10 +36,16 @@ def infecteds_read(file_name):
 		infecteds.append(int(infected))
 
 	infecteds_file.close()
-	
+
 	return infecteds
 
 if __name__ == '__main__':
+
+	# Argumentos:
+	# 1 - Grafo
+	# 2 - Porcentagem de infectados
+	# 3 - Número de Vacinas
+
 	#transmission parameters (daily rates scaled to hourly rates)
 	b = .02 / 24.0
 	g = .05 / 24.0
@@ -55,7 +62,9 @@ if __name__ == '__main__':
 		for neighbor in neighbors:
 			adjacencyListWeigth[i].append(random.random())
 
-	iList = infecteds_read(sys.argv[2])
+
+	icount = random.randint(1, int(len(adjacencyList) * float(sys.argv[2])))
+	iList = random.sample(range(len(adjacencyList)), icount)
 	gene_size = int(sys.argv[3])
 
 	S = len(adjacencyList)
@@ -124,6 +133,7 @@ if __name__ == '__main__':
 			sirbb.run()
 
 			ag.individual_performance[i] = sirbb.infectedCount
+			print sirbb.infectedCount
 			#print i, ": ", sirbb.infectedCount
 			#ag.individual_performance[i] = len(sAgentList) -  len(sirbb.sAgentList)
 			#print len(sAgentList), " - ", len(sirbb.sAgentList), " = ",  len(sAgentList) -  len(sirbb.sAgentList)
