@@ -63,7 +63,7 @@ if __name__ == '__main__':
 			adjacencyListWeigth[i].append(random.random())
 
 
-	icount = random.randint(1, int(len(adjacencyList) * float(sys.argv[2])))
+	icount = int(len(adjacencyList) * float(sys.argv[2]))
 	iList = random.sample(range(len(adjacencyList)), icount)
 	gene_size = int(sys.argv[3])
 
