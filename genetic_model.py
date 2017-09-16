@@ -35,8 +35,7 @@ class GeneticModel():
 				x = random.randint(0, self.graph_size - 1)
 				if((not x in temp) and (not x in infecteds)):
 					temp.append(x)
-
-			print temp
+					
 			self.population.append(temp)
 			self.individual_performance.append(0)
 
