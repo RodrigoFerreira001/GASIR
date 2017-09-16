@@ -3,9 +3,7 @@ import networkx as nx
 import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics.SIRModel as sir
 from genetic_model import GeneticModel
-import copy
 import random
-import matplotlib.pyplot as plt
 import sys
 
 if __name__ == '__main__':
@@ -19,6 +17,7 @@ if __name__ == '__main__':
 	parser.add_argument("gene_size", help = "Number of available vaccines", type = int)
 
 	#optional args
+	parser.add_argument("--generations", help = "Number of generations(ag's iterations)", type = int)
 	parser.add_argument("-p", "--percentage_infected", help = "Initial number of infections", type = float)
 	parser.add_argument("-b", "--beta", help = "Disease tranmission rate", type = float)
 	parser.add_argument("-g", "--gamma", help = "Disease recovery rate", type = float)
@@ -35,6 +34,9 @@ if __name__ == '__main__':
 	#gene_size
 	gene_size = args.gene_size
 
+	#generations
+	generations = 200
+
 	#percentage_infected
 	percentage_infected = 0.05
 
@@ -46,6 +48,12 @@ if __name__ == '__main__':
 	result = None
 
 	#beta check
+	if(args.generations):
+		generations = args.generations
+	else:
+		print " - Assumindo número de gerações como 200"
+
+	#percentage infected check
 	if(args.percentage_infected):
 		percentage_infected = args.percentage_infected
 	else:
@@ -57,13 +65,13 @@ if __name__ == '__main__':
 	else:
 		print " - Assumindo beta como 0.2857"
 
-	#beta check
+	#gamma check
 	if(args.gamma):
 		gamma = args.gamma
 	else:
 		print " - Assumindo gamma como 0.1428"
 
-	#beta check
+	#result check
 	if(args.result):
 		result = open(args.result, "a+")
 	else:
