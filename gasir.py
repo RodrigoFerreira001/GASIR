@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import networkx as nx
 import ndlib.models.ModelConfig as mc
-import ndlib.models.epidemics.SIRModel as sir
+#import ndlib.models.epidemics.SIRModel as sir
+import SIRModel as sir
 from genetic_model import GeneticModel
 import random
 import sys
@@ -47,7 +48,7 @@ if __name__ == '__main__':
 	#arquivo de resultado
 	result = None
 
-	#beta check
+	#generations check
 	if(args.generations):
 		generations = args.generations
 	else:
@@ -93,7 +94,7 @@ if __name__ == '__main__':
 	print "Número de infectados: ", len(infected_list)
 	print "Tamanho da rede:", graph.number_of_nodes()
 
-	while ag.generation < 200:
+	while ag.generation < generations:
 		best = 0
 		for i, ind in enumerate(ag.population):
 			# Model selection
