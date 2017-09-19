@@ -18,6 +18,10 @@ if __name__ == '__main__':
 	parser.add_argument("gene_size", help = "Number of available vaccines", type = int)
 
 	#optional args
+	parser.add_argument("--selection_mode", help = "GA's parents select mode", type = int)
+	parser.add_argument("--cross_points", help = "Crossover cross points number", type = int)
+	parser.add_argument("--mutation", help = "Crossover mutation level", type = float)
+	parser.add_argument("--cross_l", help = "Crossover cross probability", type = float)
 	parser.add_argument("--generations", help = "Number of generations(ag's iterations)", type = int)
 	parser.add_argument("-p", "--percentage_infected", help = "Initial number of infections", type = float)
 	parser.add_argument("-b", "--beta", help = "Disease tranmission rate", type = float)
@@ -35,6 +39,18 @@ if __name__ == '__main__':
 	#gene_size
 	gene_size = args.gene_size
 
+	#selecion mode
+	selection_mode = 0
+
+	#cross points
+	cross_points = 2
+
+	#mutation
+	mutation = 0.05
+
+	#cross level
+	cross_l = 0.9
+
 	#generations
 	generations = 200
 
@@ -47,6 +63,30 @@ if __name__ == '__main__':
 
 	#arquivo de resultado
 	result = None
+
+	#selection_mode check
+	if(args.selection_mode):
+		selection_mode = args.selection_mode
+	else:
+		print " - Assumindo modo de seleção como 0"
+
+	#cross_points check
+	if(args.cross_points):
+		cross_points = args.cross_points
+	else:
+		print " - Assumindo pontos de cruzamento como 2"
+
+	#mutation check
+	if(args.mutation):
+		mutation = args.mutation
+	else:
+		print " - Assumindo probabilidade de mutação como 0.5%"
+
+	#generations check
+	if(args.cross_l):
+		cross_l = args.cross_l
+	else:
+		print " - Assumindo probabilidade de cruzamento como 90%"
 
 	#generations check
 	if(args.generations):
@@ -86,7 +126,7 @@ if __name__ == '__main__':
 	infected_list = random.sample(range(graph.number_of_nodes()), int(graph.number_of_nodes() * percentage_infected))
 
 	#cria o ag
-	ag = GeneticModel(population_size, gene_size, graph.number_of_nodes(), infected_list, selection_mode = 2 , cross_points = 4)
+	ag = GeneticModel(population_size, gene_size, graph.number_of_nodes(), infected_list, selection_mode , cross_points, mutation, cross_l)
 
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size

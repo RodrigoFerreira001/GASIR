@@ -3,7 +3,7 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode = 0, cross_points = 2, mutation = 0.05, cross_l = 0.9):
+	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
 		self.population_size = pop_size + 1
 		self.gene_size = gene_size
 		self.graph_size = graph_size
@@ -35,7 +35,7 @@ class GeneticModel():
 				x = random.randint(0, self.graph_size - 1)
 				if((not x in temp) and (not x in infecteds)):
 					temp.append(x)
-					
+
 			self.population.append(temp)
 			self.individual_performance.append(0)
 
