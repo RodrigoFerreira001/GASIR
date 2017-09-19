@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from matplotlib import pyplot as plt
 from matplotlib import colors
-import cv2
 import numpy as np
 import sys
 
@@ -55,4 +54,4 @@ plt.ylabel('Vezes Selecionado')
 plt.title('GASIR - Genetic Algorithm for SIR Model')
 
 plt.savefig(sys.argv[1].split(".")[0] + ".svg", format="svg")
-plt.show()
+#plt.show()

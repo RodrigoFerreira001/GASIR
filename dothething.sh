@@ -1,5 +1,5 @@
-for((number = 0; number < 10; number++)){
-	python sir_genetic_algorithm.py sociopatterns-infectious_ad.txt 100 30
+for((number = 0; number < 50; number++)){
+	python gasir.py sociopatterns-infectious_ad.txt 100 30
 }
 
 #python plot_histogram <arquivo_resultado> <número de indivíduos do grafo>
