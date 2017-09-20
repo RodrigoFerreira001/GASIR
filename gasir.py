@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import networkx as nx
+import numpy as np
 import ndlib.models.ModelConfig as mc
 #import ndlib.models.epidemics.SIRModel as sir
 import SIRModel as sir
@@ -55,7 +56,7 @@ if __name__ == '__main__':
 	generations = 200
 
 	#percentage_infected
-	percentage_infected = 0.05
+	percentage_infected = 0.005
 
 	#transmission parameters (daily rates scaled to hourly rates)
 	beta = 0.2857
@@ -63,6 +64,8 @@ if __name__ == '__main__':
 
 	#arquivo de resultado
 	result = None
+	result_detailed = None
+	result_generation_detailed = None
 
 	#selection_mode check
 	if(args.selection_mode):
@@ -80,7 +83,7 @@ if __name__ == '__main__':
 	if(args.mutation):
 		mutation = args.mutation
 	else:
-		print " - Assumindo probabilidade de mutação como 0.5%"
+		print " - Assumindo probabilidade de mutação como 5%"
 
 	#generations check
 	if(args.cross_l):
@@ -115,9 +118,13 @@ if __name__ == '__main__':
 	#result check
 	if(args.result):
 		result = open(args.result, "a+")
+		result_detailed = open(args.result.split(".")[0] + "_detailed" + args.result.split(".")[1], "a+")
+		result_generation_detailed = open(args.result.split(".")[0] + "_generation_detailed" + args.result.split(".")[1], "a+")
 	else:
 		print " - Assumindo arquivo de saída como ", args.graph.split(".")[0] + ".result"
 		result = open(str(args.graph.split(".")[0] + ".result"), "a+")
+		result_detailed = open(str(args.graph.split(".")[0] + "_detailed.result"), "a+")
+		result_generation_detailed = open(str(args.graph.split(".")[0] + "_generation_detailed.result"), "a+")
 
 
 	# ---------- Início -----------
@@ -142,9 +149,10 @@ if __name__ == '__main__':
 
 			# Model Configuration
 			cfg = mc.Configuration()
-			cfg.add_model_parameter('beta', 0.2857)
-			cfg.add_model_parameter('gamma', 0.1428)
+			cfg.add_model_parameter('beta', beta)
+			cfg.add_model_parameter('gamma', gamma)
 
+			#cfg.add_model_parameter("percentage_infected", percentage_infected)
 			cfg.add_model_initial_configuration("Infected", infected_list)
 			cfg.add_model_initial_configuration("Removed", ind)
 
@@ -153,22 +161,29 @@ if __name__ == '__main__':
 
 			#count each infected for each simulation
 			infecteds_count = 0
+			control = 0
+			control_count = 0
 
 			#first model iterarion
 			iteration = model.iteration()
 
 			while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
 				#print iteration['node_count']
+				if(iteration['node_count'][1] > control):
+					control = iteration['node_count'][1]
+					control_count += (control - control_count)
 				# for key, value in iteration['status'].items():
 				# 	if(value == 1):
 				# 		infecteds_count += 1
 
 				iteration = model.iteration()
 
-			#ag.individual_performance[i] = infecteds_count
-			ag.individual_performance[i] = model.infecteds_count
+			# print "IC: ", infecteds_count, " | MIC: ", model.infecteds_count
+			ag.individual_performance[i] = control_count
+			#ag.individual_performance[i] = model.infecteds_count
 
 		#realiza métodos do ag
+		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
 		ag.parents_select()
 		print "\nGeração: ", ag.generation
 		print "Melhor: ", ag.best
@@ -179,5 +194,15 @@ if __name__ == '__main__':
 	print ag.global_best
 	print ag.global_best_performance
 
+	result_generation_detailed.close()
+
 	result.write(str(ag.global_best) + "\n")
 	result.close()
+
+	result_detailed.write("Individual:\n");
+	result_detailed.write(str(ag.global_best) + "\n");
+	result_detailed.write("Fitness:\n");
+	result_detailed.write(str(ag.global_best_performance) + "\n");
+	result_detailed.write("Infecteds:\n");
+	result_detailed.write(str(infected_list) + "\n");
+	result_detailed.close()
