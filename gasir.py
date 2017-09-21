@@ -2,8 +2,7 @@
 import networkx as nx
 import numpy as np
 import ndlib.models.ModelConfig as mc
-#import ndlib.models.epidemics.SIRModel as sir
-import SIRModel as sir
+import ndlib.models.epidemics.SIRModel as sir
 from genetic_model import GeneticModel
 import random
 import sys
@@ -161,26 +160,18 @@ if __name__ == '__main__':
 
 			#count each infected for each simulation
 			infecteds_count = 0
-			control = 0
-			control_count = 0
-
+			
 			#first model iterarion
 			iteration = model.iteration()
 
 			while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
-				#print iteration['node_count']
-				if(iteration['node_count'][1] > control):
-					control = iteration['node_count'][1]
-					control_count += (control - control_count)
-				# for key, value in iteration['status'].items():
-				# 	if(value == 1):
-				# 		infecteds_count += 1
+				if(iteration['status_delta'][1] >= 0):
+					infecteds_count += iteration['status_delta'][1]
 
 				iteration = model.iteration()
 
-			# print "IC: ", infecteds_count, " | MIC: ", model.infecteds_count
-			ag.individual_performance[i] = control_count
-			#ag.individual_performance[i] = model.infecteds_count
+			#atribui fitness
+			ag.individual_performance[i] = infecteds_count
 
 		#realiza métodos do ag
 		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
