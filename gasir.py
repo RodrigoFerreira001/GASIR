@@ -40,7 +40,7 @@ if __name__ == '__main__':
 	gene_size = args.gene_size
 
 	#selecion mode
-	selection_mode = 0
+	selection_mode = 2
 
 	#cross points
 	cross_points = 2
@@ -160,7 +160,7 @@ if __name__ == '__main__':
 
 			#count each infected for each simulation
 			infecteds_count = 0
-			
+
 			#first model iterarion
 			iteration = model.iteration()
 
@@ -190,10 +190,7 @@ if __name__ == '__main__':
 	result.write(str(ag.global_best) + "\n")
 	result.close()
 
-	result_detailed.write("Individual:\n");
 	result_detailed.write(str(ag.global_best) + "\n");
-	result_detailed.write("Fitness:\n");
 	result_detailed.write(str(ag.global_best_performance) + "\n");
-	result_detailed.write("Infecteds:\n");
 	result_detailed.write(str(infected_list) + "\n");
 	result_detailed.close()

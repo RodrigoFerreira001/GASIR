@@ -46,7 +46,7 @@ ibar =  plt.bar(y_pos, histogram, align='center', alpha=0.5)
 
 for i,element in enumerate(ibar):
 	norm = colors.Normalize(0.0, 1.0)
-	color = plt.cm.viridis(norm(histogram[i]/highest_value))
+	color = plt.cm.winter(norm(histogram[i]/highest_value))
 	element.set_color(color)
 #plt.xticks(y_pos, objects)
 plt.xlabel('Individuo')

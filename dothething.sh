@@ -1,4 +1,4 @@
-for((number = 0; number < 70; number++)){
+for((number = 0; number < 10; number++)){
 	python gasir.py sociopatterns-infectious_ad.txt 100 30
 }
 
