@@ -18,6 +18,7 @@ if __name__ == '__main__':
 	parser.add_argument("gene_size", help = "Number of available vaccines", type = int)
 
 	#optional args
+	parser.add_argument("--infecteds", help = "Initial infecteds", type = int, nargs='*')
 	parser.add_argument("--selection_mode", help = "GA's parents select mode", type = int)
 	parser.add_argument("--cross_points", help = "Crossover cross points number", type = int)
 	parser.add_argument("--mutation", help = "Crossover mutation level", type = float)
@@ -129,7 +130,11 @@ if __name__ == '__main__':
 	# ---------- Início -----------
 
 	#lista de infectados
-	infected_list = random.sample(range(graph.number_of_nodes()), int(graph.number_of_nodes() * percentage_infected))
+	infected_list = []
+	if(args.infecteds):
+		infected_list = args.infecteds[:]
+	else:
+		infected_list = random.sample(range(graph.number_of_nodes()), int(graph.number_of_nodes() * percentage_infected))
 
 	#cria o ag
 	ag = GeneticModel(population_size, gene_size, graph.number_of_nodes(), infected_list, selection_mode , cross_points, mutation, cross_l)
@@ -137,7 +142,7 @@ if __name__ == '__main__':
 	print "- GASIR -"
 	print "Tamanho da população: ", ag.population_size
 	print "Tamanho do gene: ", gene_size
-	print "Número de infectados: ", len(infected_list)
+	print "Número de infectados: ", len(infected_list), ": ", infected_list
 	print "Tamanho da rede:", graph.number_of_nodes()
 
 	while ag.generation < generations:
