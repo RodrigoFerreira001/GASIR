@@ -6,10 +6,9 @@ import ndlib.models.epidemics.SIRModel as sir
 from genetic_model import GeneticModel
 import random
 import sys
+import argparse
 
 if __name__ == '__main__':
-
-	import argparse
 
 	parser = argparse.ArgumentParser()
 	#required args
