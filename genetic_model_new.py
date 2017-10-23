@@ -13,8 +13,6 @@ class GeneticModel():
 		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
-		self.population2 = []
-		self.individual_performance2 = []
 		self.best = []
 		self.best_performance = sys.maxint
 		self.global_best = []
@@ -92,8 +90,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.gene_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -149,9 +157,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
-			#print "- Melhor pai pos: ", best_pos
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.gene_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -189,9 +206,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
-			#print "- Melhor pai pos: ", best_pos
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.gene_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -222,50 +248,6 @@ class GeneticModel():
 
 		#cria a nova população
 		new_population = []
-
-		#reserva o melhor pai
-		best_parent = self.population[selected_parents[0]][:]
-
-		#remove duplicatas
-		temp = list(set(best_parent))
-		while((self.gene_size - len(temp)) > 0):
-			x = random.randint(0, self.graph_size - 1)
-			if(x not in temp):
-				temp.append(x)
-
-		self.best = temp[:]
-		self.best_performance = self.individual_performance[selected_parents[0]]
-
-		#Comente para ser realizado "elitismo guloso"
-		# if(self.individual_performance[selected_parents[0]] < self.best_performance):
-		# 	print "CASO 1:"
-		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
-		# 	print "BEST PERF: ",self.best_performance
-		# 	self.best = best_parent[:]
-		# 	self.best_performance = self.individual_performance[selected_parents[0]]
-		# else:
-		# 	print "CASO 2:"
-		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
-		# 	print "BEST PERF: ",self.best_performance
-		# 	best_parent = self.best[:]
-
-		new_population.append(best_parent)
-
-		# if(self.best_performance > self.individual_performance[selected_parents[0]]):
-		# 	self.best = best_parent[:]
-		# 	self.best_performance = self.individual_performance[selected_parents[0]]
-		#
-		# else:
-		# 	new_population.append(self.best[:])
-
-
-		#print "- Melhor pai:"
-		#print best_parent
-
-		#print "\n-Pais selecionados: "
-		#for parent in selected_parents:
-			#print parent
-
 
 		while(len(new_population) < self.population_size):
 			parent1 = 0
@@ -332,3 +314,18 @@ class GeneticModel():
 
 		#avança a geração
 		self.generation += 1
+
+
+	def replace(self):
+		if(self.generation > 0):
+			for i in range(self.population_size):
+				if(self.individual_performance2[i] < self.individual_performance[i]):
+					self.individual_performance[i] = self.individual_performance2[i][:]
+					self.population[i] = self.population2[i][:]
+		else:
+			for i in range(self.population_size):
+				self.individual_performance2[i] = self.individual_performance[i][:]
+				self.population2[i] = self.population[i][:]
+
+
+

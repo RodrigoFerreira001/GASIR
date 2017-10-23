@@ -3,7 +3,7 @@ import networkx as nx
 import numpy as np
 import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics.SIRModel as sir
-from genetic_model import GeneticModel
+from genetic_model_new import GeneticModel
 import random
 import sys
 import argparse
@@ -184,6 +184,7 @@ if __name__ == '__main__':
 		print "Melhor: ", ag.best
 		print "Infectados: ", ag.best_performance
 		print " ------------------------ "
+		ag.replace()
 
 	print "GLOBAL:"
 	print ag.global_best
