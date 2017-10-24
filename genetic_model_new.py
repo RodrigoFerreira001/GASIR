@@ -13,6 +13,8 @@ class GeneticModel():
 		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
+		self.population2 = []
+		self.individual_performance2 = []
 		self.best = []
 		self.best_performance = sys.maxint
 		self.global_best = []
@@ -38,6 +40,8 @@ class GeneticModel():
 
 			self.population.append(temp)
 			self.individual_performance.append(0)
+			self.population2.append(temp)
+			self.individual_performance2.append(0)
 
 	def parents_select(self):
 		#print "- Seleção de Pais:"
@@ -317,14 +321,14 @@ class GeneticModel():
 
 
 	def replace(self):
-		if(self.generation > 0):
+		if(self.generation > 1):
 			for i in range(self.population_size):
 				if(self.individual_performance2[i] < self.individual_performance[i]):
-					self.individual_performance[i] = self.individual_performance2[i][:]
+					self.individual_performance[i] = self.individual_performance2[i]
 					self.population[i] = self.population2[i][:]
 		else:
 			for i in range(self.population_size):
-				self.individual_performance2[i] = self.individual_performance[i][:]
+				self.individual_performance2[i] = self.individual_performance[i]
 				self.population2[i] = self.population[i][:]
 
 
