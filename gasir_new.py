@@ -179,11 +179,50 @@ if __name__ == '__main__':
 
 		#realiza métodos do ag
 		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
+
+
+		#realiza seleção dos pais
 		ag.parents_select()
+
 		print "\nGeração: ", ag.generation
 		print "Melhor: ", ag.best
 		print "Infectados: ", ag.best_performance
 		print " ------------------------ "
+
+
+		#realiza avaliação dos filhos
+		for i, ind in enumerate(ag.population2):
+			# Model selection
+			model = sir.SIRModel(graph)
+
+			# Model Configuration
+			cfg = mc.Configuration()
+			cfg.add_model_parameter('beta', beta)
+			cfg.add_model_parameter('gamma', gamma)
+
+			#cfg.add_model_parameter("percentage_infected", percentage_infected)
+			cfg.add_model_initial_configuration("Infected", infected_list)
+			cfg.add_model_initial_configuration("Removed", ind)
+
+			#set initial status for the model
+			model.set_initial_status(cfg)
+
+			#count each infected for each simulation
+			infecteds_count = 0
+
+			#first model iterarion
+			iteration = model.iteration()
+
+			while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
+				if(iteration['status_delta'][1] >= 0):
+					infecteds_count += iteration['status_delta'][1]
+
+				iteration = model.iteration()
+
+			#atribui fitness
+			ag.individual_performance2[i] = infecteds_count
+
+		#substitui os pais pelos novos filhos
 		ag.replace()
 
 	print "GLOBAL:"

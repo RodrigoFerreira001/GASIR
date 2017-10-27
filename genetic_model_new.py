@@ -296,40 +296,34 @@ class GeneticModel():
 				new_population.append(child2)
 
 		#remover ultimo filho?
-		self.population = new_population[:]
+		self.population2 = new_population[:]
 
 		#inicializa mutação
 		self.__mutate()
 
 	def __mutate(self):
 		#print "\n- Mutação: "
-		for i in range(1, len(self.population)):
+		for i in range(1, self.population_size):
 			for g in range(self.gene_size):
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
 					r = random.randint(0, self.graph_size - 1);
-					if(r not in self.population[i]):
-						self.population[i][g] = r
+					if(r not in self.population2[i]):
+						self.population2[i][g] = r
 					else:
-						while(r in self.population[i]):
+						while(r in self.population2[i]):
 							r = random.randint(0, self.graph_size - 1);
-						self.population[i][g] = r
-
-		#avança a geração
-		self.generation += 1
-
+						self.population2[i][g] = r
 
 	def replace(self):
-		if(self.generation > 1):
-			for i in range(self.population_size):
-				if(self.individual_performance2[i] < self.individual_performance[i]):
-					self.individual_performance[i] = self.individual_performance2[i]
-					self.population[i] = self.population2[i][:]
-		else:
-			for i in range(self.population_size):
-				self.individual_performance2[i] = self.individual_performance[i]
-				self.population2[i] = self.population[i][:]
+		for i in range(self.population_size):
+			if (self.individual_performance2[i] < self.individual_performance[i]):
+				self.individual_performance[i] = self.individual_performance2[i]
+				self.population[i] = self.population2[i][:]
+
+		# avança a geração
+		self.generation += 1
 
 
 
