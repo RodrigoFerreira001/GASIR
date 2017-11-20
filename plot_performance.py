@@ -9,6 +9,7 @@ num_generations = int(sys.argv[2])
 
 generation_detailed_source = open(sys.argv[3])
 detailed_source = open(sys.argv[4])
+m_value = int(sys.argv[5])
 
 #p_matrix = np.zeros((num_iterations, num_generations), dtype = int)
 p_matrix = []
@@ -52,7 +53,7 @@ for i,value in enumerate(performance):
 
 #melhor caso
 plt.plot(range(len(p_matrix[best_performance_pos])), p_matrix[best_performance_pos], 'ro')
-plt.axis([0, len(p_matrix[best_performance_pos]), 0, 410])
+plt.axis([0, len(p_matrix[best_performance_pos]), 0, m_value])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Melhor Caso')
@@ -61,7 +62,7 @@ plt.clf()
 
 #pior caso
 plt.plot(range(len(p_matrix[wrost_performance_pos])), p_matrix[wrost_performance_pos], 'ro')
-plt.axis([0, len(p_matrix[wrost_performance_pos]), 0, 410])
+plt.axis([0, len(p_matrix[wrost_performance_pos]), 0, m_value])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Pior Caso')
@@ -70,7 +71,7 @@ plt.clf()
 
 #média
 plt.plot(range(len(avg_perf)), avg_perf, 'ro')
-plt.axis([0, len(avg_perf), 0, 410])
+plt.axis([0, len(avg_perf), 0, m_value])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Media')
