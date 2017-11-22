@@ -28,7 +28,7 @@ for value in histogram:
 
 print highest_value
 for i,value in enumerate(histogram):
-	if(value >= (highest_value - (highest_value * sample_size))):
+	if(value > (highest_value - (highest_value * sample_size))):
 		sample.append(i)
 
 sample_file = open(sys.argv[1].split(".")[0] + ".sample", "w")
