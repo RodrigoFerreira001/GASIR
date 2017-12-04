@@ -23,11 +23,7 @@ for node in nodes:
 spage_rank = sorted(page_rank.items(), key=itemgetter(1), reverse=True)
 output.write("PageRank:\n")
 for entry in spage_rank:
-    print entry
     output.write(str(entry) + "\n")
-
-
-print "\n ######### \n"
 
 #Betweenness
 betweennesst = nx.betweenness_centrality(g)
@@ -38,16 +34,20 @@ for node in nodes:
 sbetweenness = sorted(betweenness.items(), key=itemgetter(1), reverse=True)
 output.write("\nBetweenness:\n")
 for entry in sbetweenness:
-    print entry
     output.write(str(entry) + "\n")
-
-print "\n ######### \n"
 
 #Grau
 degreet = g.degree(nodes)
 degree = {}
-for entry in degreet:
-    degree.update({entry[0]: entry[1]})
+
+print "##################"
+print type(degreet)
+print "##################"
+
+
+
+for key, value in degreet.iteritems():
+    degree.update({key: value})
 
 sdegree = sorted(degree.items(), key=itemgetter(1), reverse=True)
 output.write("\nGraus:\n")
