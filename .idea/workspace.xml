@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.info" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.sample" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_media_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_melhor_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_pior_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.info" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.sample" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_detailed.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_media_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_melhor_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_pior_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.info" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.sample" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_detailed.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed.result" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_media_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_melhor_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_pior_.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/GASIR.iml" afterPath="$PROJECT_DIR$/.idea/GASIR.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gasir_new.py" afterPath="$PROJECT_DIR$/gasir_new.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000.result" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000_detailed.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000_detailed.result" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed.result" />
-    </list>
+    <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
