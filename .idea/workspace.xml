@@ -2,9 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/best_nodes_details.py" afterPath="$PROJECT_DIR$/best_nodes_details.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plot_h.sh" afterPath="$PROJECT_DIR$/plot_h.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plt_histograms.sh" afterPath="$PROJECT_DIR$/plt_histograms.sh" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_media_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_melhor_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed_pior_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_detailed.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_media_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_melhor_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_2000_generation_detailed_pior_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_detailed.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed.result" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_media_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_melhor_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/watts_strogatz_500_generation_detailed_pior_.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/GASIR.iml" afterPath="$PROJECT_DIR$/.idea/GASIR.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gasir_new.py" afterPath="$PROJECT_DIR$/gasir_new.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000.result" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000_detailed.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000_detailed.result" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed.result" afterPath="$PROJECT_DIR$/watts_strogatz_1000_generation_detailed.result" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +43,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="best_nodes_details.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/best_nodes_details.py">
+      <file leaf-file-name="SIRModelCustom.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/dist-packages/ndlib/models/epidemics/SIRModelCustom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+            <state relative-caret-position="1163">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gasir_new.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gasir_new.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3467">
+              <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
+              <folding>
+                <element signature="e#24#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plot_h.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_h.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plt_histograms.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plt_histograms.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dothething.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dothething.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -42,7 +114,6 @@
       <list>
         <option value="$PROJECT_DIR$/gasir.py" />
         <option value="$PROJECT_DIR$/genetic_model_new.py" />
-        <option value="$PROJECT_DIR$/gasir_new.py" />
         <option value="$PROJECT_DIR$/plot_histogram_mean.py" />
         <option value="$PROJECT_DIR$/teste.txt" />
         <option value="$PROJECT_DIR$/watts_strogatz_500.txt" />
@@ -58,6 +129,8 @@
         <option value="$PROJECT_DIR$/plt_histograms.sh" />
         <option value="$PROJECT_DIR$/dothething.sh" />
         <option value="$PROJECT_DIR$/best_nodes_details.py" />
+        <option value="$PROJECT_DIR$/gasir_new.py" />
+        <option value="/usr/local/lib/python2.7/dist-packages/ndlib/models/epidemics/SIRModelCustom.py" />
       </list>
     </option>
   </component>
@@ -82,7 +155,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,20 +162,16 @@
               <item name="GASIR" type="b2602c69:ProjectViewProjectNode" />
               <item name="GASIR" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GASIR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GASIR" type="462c0819:PsiDirectoryNode" />
-              <item name="Execução(Nova Rede)" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="last_opened_file_path" value="/usr/local/lib/python2.7/dist-packages/ndlib/models/DiffusionModel.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -139,19 +207,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1360" height="741" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22942074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23717949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34280938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -173,25 +240,11 @@
           <line>1</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plot_histogram_mean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gasir_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/genetic_model_new.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5832">
@@ -366,59 +419,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_h.sh" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_500.sample" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_1000.sample" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_2000.sample" />
-    <entry file="file://$PROJECT_DIR$/plt_histograms.sh" />
-    <entry file="file://$PROJECT_DIR$/watts_strogatz_2000.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watts_strogatz_1000.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watts_strogatz_500.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/watts_strogatz_2000.info" />
+    <entry file="file://$PROJECT_DIR$/watts_strogatz_1000.info" />
+    <entry file="file://$PROJECT_DIR$/watts_strogatz_500.info" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_2000.info" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_1000.info" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_500.info" />
     <entry file="file://$PROJECT_DIR$/Execução(Nova Rede)/watts_strogatz_500.sample" />
     <entry file="file://$PROJECT_DIR$/Execução(Nova Rede)/watts_strogatz_1000.sample" />
     <entry file="file://$PROJECT_DIR$/Execução(Nova Rede)/watts_strogatz_2000.sample" />
-    <entry file="file://$PROJECT_DIR$/dothething.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gasir_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="239" column="27" lean-forward="false" selection-start-line="239" selection-start-column="27" selection-end-line="239" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Execução(Nova Rede)/erdos_renyi_500.info">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -426,14 +442,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/best_nodes_details.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+        <state relative-caret-position="156">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/ndlib/models/DiffusionModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5154">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dothething.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/ndlib/models/epidemics/SIRModelCustom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1163">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gasir_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3467">
+          <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_h.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plt_histograms.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="56" />
           <folding />
         </state>
       </provider>

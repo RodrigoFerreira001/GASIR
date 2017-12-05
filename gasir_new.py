@@ -2,7 +2,7 @@
 import networkx as nx
 import numpy as np
 import ndlib.models.ModelConfig as mc
-import ndlib.models.epidemics.SIRModel as sir
+import ndlib.models.epidemics.SIRModelCustom as sir
 from genetic_model_new import GeneticModel
 import random
 import sys
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 	parser.add_argument("-p", "--percentage_infected", help = "Initial number of infections", type = float)
 	parser.add_argument("-b", "--beta", help = "Disease tranmission rate", type = float)
 	parser.add_argument("-g", "--gamma", help = "Disease recovery rate", type = float)
+	parser.add_argument("-f", "--fixed", help="Is the value fixed for nodes infections?", type=bool)
 	parser.add_argument("-r", "--result", help = "File with the best individual of the genetic algorithm", type = float)
 
 	args = parser.parse_args()
@@ -60,6 +61,8 @@ if __name__ == '__main__':
 	#transmission parameters (daily rates scaled to hourly rates)
 	beta = 0.2857
 	gamma = 0.1428
+
+	fixed = False
 
 	#arquivo de resultado
 	result = None
@@ -114,6 +117,16 @@ if __name__ == '__main__':
 	else:
 		print " - Assumindo gamma como 0.1428"
 
+	# fixed check
+	if (args.fixed):
+		fixed = True
+
+		for i in range(graph.number_of_nodes()):
+			graph.node[i]['beta'] = np.random.random_sample()
+			graph.node[i]['gamma'] = np.random.random_sample()
+	else:
+		print " - Assumindo valores não fixos de infecção"
+
 	#result check
 	if(args.result):
 		result = open(args.result, "a+")
@@ -148,7 +161,7 @@ if __name__ == '__main__':
 		best = 0
 		for i, ind in enumerate(ag.population):
 			# Model selection
-			model = sir.SIRModel(graph)
+			model = sir.SIRModelCustom(graph, fixed_values = fixed)
 
 			# Model Configuration
 			cfg = mc.Configuration()
@@ -172,6 +185,8 @@ if __name__ == '__main__':
 				if(iteration['status_delta'][1] >= 0):
 					infecteds_count += iteration['status_delta'][1]
 
+				#print iteration['node_count']
+
 				iteration = model.iteration()
 
 			#atribui fitness
@@ -193,7 +208,7 @@ if __name__ == '__main__':
 		#realiza avaliação dos filhos
 		for i, ind in enumerate(ag.population2):
 			# Model selection
-			model = sir.SIRModel(graph)
+			model = sir.SIRModelCustom(graph, fixed_values = fixed)
 
 			# Model Configuration
 			cfg = mc.Configuration()
