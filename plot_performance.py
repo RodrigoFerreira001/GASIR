@@ -51,9 +51,26 @@ for i,value in enumerate(performance):
         wrost_performance = value
         wrost_performance_pos = i
 
+
+teto_b = 0
+teto_w = 0
+teto_m = 0
+
+for i in p_matrix[best_performance_pos]:
+    if(i > teto_b):
+        teto_b = i
+
+for i in p_matrix[wrost_performance_pos]:
+    if (i > teto_w):
+        teto_w = i
+
+for i in avg_perf:
+    if (i > teto_m):
+        teto_m = i
+
 #melhor caso
 plt.plot(range(len(p_matrix[best_performance_pos])), p_matrix[best_performance_pos], 'ro')
-plt.axis([0, len(p_matrix[best_performance_pos]), 0, m_value])
+plt.axis([0, len(p_matrix[best_performance_pos]), 0, teto_b])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Melhor Caso')
@@ -62,7 +79,7 @@ plt.clf()
 
 #pior caso
 plt.plot(range(len(p_matrix[wrost_performance_pos])), p_matrix[wrost_performance_pos], 'ro')
-plt.axis([0, len(p_matrix[wrost_performance_pos]), 0, m_value])
+plt.axis([0, len(p_matrix[wrost_performance_pos]), 0, teto_w])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Pior Caso')
@@ -71,7 +88,7 @@ plt.clf()
 
 #média
 plt.plot(range(len(avg_perf)), avg_perf, 'ro')
-plt.axis([0, len(avg_perf), 0, m_value])
+plt.axis([0, len(avg_perf), 0, teto_m])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
 plt.title('GASIR - Genetic Algorithm for SIR Model - Media')
