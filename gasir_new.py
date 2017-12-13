@@ -157,44 +157,44 @@ if __name__ == '__main__':
 	print "Número de infectados: ", len(infected_list), ": ", infected_list
 	print "Tamanho da rede:", graph.number_of_nodes()
 
-	while ag.generation < generations:
-		best = 0
-		for i, ind in enumerate(ag.population):
-			# Model selection
-			model = sir.SIRModelCustom(graph, fixed_values = fixed)
+	for i, ind in enumerate(ag.population):
+		# Model selection
+		model = sir.SIRModelCustom(graph, fixed_values=fixed)
 
-			# Model Configuration
-			cfg = mc.Configuration()
-			cfg.add_model_parameter('beta', beta)
-			cfg.add_model_parameter('gamma', gamma)
+		# Model Configuration
+		cfg = mc.Configuration()
+		cfg.add_model_parameter('beta', beta)
+		cfg.add_model_parameter('gamma', gamma)
 
-			#cfg.add_model_parameter("percentage_infected", percentage_infected)
-			cfg.add_model_initial_configuration("Infected", infected_list)
-			cfg.add_model_initial_configuration("Removed", ind)
+		# cfg.add_model_parameter("percentage_infected", percentage_infected)
+		cfg.add_model_initial_configuration("Infected", infected_list)
+		cfg.add_model_initial_configuration("Removed", ind)
 
-			#set initial status for the model
-			model.set_initial_status(cfg)
+		# set initial status for the model
+		model.set_initial_status(cfg)
 
-			#count each infected for each simulation
-			infecteds_count = 0
+		# count each infected for each simulation
+		infecteds_count = 0
 
-			#first model iterarion
+		# first model iterarion
+		iteration = model.iteration()
+
+		while ((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
+			if (iteration['status_delta'][1] >= 0):
+				infecteds_count += iteration['status_delta'][1]
+
+			# print iteration['node_count']
+
 			iteration = model.iteration()
 
-			while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
-				if(iteration['status_delta'][1] >= 0):
-					infecteds_count += iteration['status_delta'][1]
+		# atribui fitness
+		ag.individual_performance[i] = infecteds_count
 
-				#print iteration['node_count']
+	# realiza métodos do ag
+	result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
 
-				iteration = model.iteration()
-
-			#atribui fitness
-			ag.individual_performance[i] = infecteds_count
-
-		#realiza métodos do ag
-		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
-
+	while ag.generation < generations:
+		best = 0
 
 		#realiza seleção dos pais
 		ag.parents_select()

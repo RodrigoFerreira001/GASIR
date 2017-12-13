@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SIRModelCustom.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/best_nodes_details.py" afterPath="$PROJECT_DIR$/best_nodes_details.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dothething.sh" afterPath="$PROJECT_DIR$/dothething.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plot_h.sh" afterPath="$PROJECT_DIR$/plot_h.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plot_performance.py" afterPath="$PROJECT_DIR$/plot_performance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plt_histograms.sh" afterPath="$PROJECT_DIR$/plt_histograms.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gasir_new.py" afterPath="$PROJECT_DIR$/gasir_new.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +15,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="best_nodes_details.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/best_nodes_details.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="28" column="71" lean-forward="false" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dothething.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dothething.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,13 +65,13 @@
         <option value="$PROJECT_DIR$/Execução (Infectados Aleatórios)/best_nodes_details.py" />
         <option value="$PROJECT_DIR$/erdos_renyi_500.sample" />
         <option value="$PROJECT_DIR$/plot_histogram.py" />
-        <option value="$PROJECT_DIR$/best_nodes_details.py" />
-        <option value="$PROJECT_DIR$/gasir_new.py" />
         <option value="/usr/local/lib/python2.7/dist-packages/ndlib/models/epidemics/SIRModelCustom.py" />
         <option value="$PROJECT_DIR$/plot_h.sh" />
         <option value="$PROJECT_DIR$/plt_histograms.sh" />
         <option value="$PROJECT_DIR$/plot_performance.py" />
+        <option value="$PROJECT_DIR$/gasir_new.py" />
         <option value="$PROJECT_DIR$/dothething.sh" />
+        <option value="$PROJECT_DIR$/best_nodes_details.py" />
       </list>
     </option>
   </component>
@@ -76,8 +95,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,6 +111,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -134,18 +153,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1360" height="741" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34280938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31978023" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -172,13 +191,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/genetic_model_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5346">
-          <caret line="298" column="17" lean-forward="false" selection-start-line="298" selection-start-column="17" selection-end-line="298" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gasir_new.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -289,20 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_histogram_mean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1367">
-          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/genetic_model_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5670">
-          <caret line="325" column="8" lean-forward="false" selection-start-line="325" selection-start-column="8" selection-end-line="325" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teste.txt" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_2000.txt" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_1000.txt" />
@@ -344,13 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/best_nodes_details.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/ndlib/models/DiffusionModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5154">
@@ -363,7 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="121" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -371,58 +361,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_500.sample">
+    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_500.sample" />
+    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_1000.sample" />
+    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_2000.sample" />
+    <entry file="file://$PROJECT_DIR$/genetic_model_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_1000.sample">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Execução (Gamma Fixo)/watts_strogatz_2000.sample">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dothething.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="5580">
+          <caret line="311" column="46" lean-forward="false" selection-start-line="311" selection-start-column="46" selection-end-line="311" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plot_performance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="362">
           <caret line="90" column="37" lean-forward="false" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_histogram_mean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gasir_new.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="163" column="66" lean-forward="false" selection-start-line="163" selection-start-column="61" selection-end-line="163" selection-end-column="66" />
+        <state relative-caret-position="666">
+          <caret line="196" column="16" lean-forward="false" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
           <folding>
             <element signature="e#24#45#0" expanded="true" />
-            <marker date="1512473841553" expanded="true" signature="6360:7177" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dothething.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/best_nodes_details.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="28" column="71" lean-forward="false" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>

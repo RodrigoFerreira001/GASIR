@@ -27,3 +27,7 @@ python best_nodes_details.py watts_strogatz_2000.sample watts_strogatz_2000.txt
 python plot_performance.py 10 100 watts_strogatz_500_generation_detailed.result watts_strogatz_500_detailed.result 500
 python plot_performance.py 10 100 watts_strogatz_1000_generation_detailed.result watts_strogatz_1000_detailed.result 1000
 python plot_performance.py 10 100 watts_strogatz_2000_generation_detailed.result watts_strogatz_2000_detailed.result 2000
+
+python graph_info.py watts_strogatz_500.txt
+python graph_info.py watts_strogatz_1000.txt
+python graph_info.py watts_strogatz_2000.txt

@@ -16,14 +16,26 @@ for n in tnodes:
 
 #Page Rank
 page_rankt = nx.pagerank(g)
+
+pr_values = sorted(page_rankt.iteritems(), key=lambda (k,v): (v,k))
+
+# for key, value in sorted(page_rankt.iteritems(), key=lambda (k,v): (v,k)):
+#     print "%s: %s" % (key, value)
+
 page_rank = {}
 for node in nodes:
     page_rank.update({node : page_rankt[node]})
 
-spage_rank = sorted(page_rank.items(), key=itemgetter(1), reverse=True)
+spage_rank = sorted(page_rank.items(), key=itemgetter(1), reverse=False)
 output.write("PageRank:\n")
 for entry in spage_rank:
-    output.write(str(entry) + "\n")
+    pos = 0
+    for value in pr_values:
+        if(value[0] == entry[0]):
+            break
+        else:
+            pos += 1
+    output.write(str(pos) + "º: " + str(entry) + "\n")
 
 #Betweenness
 betweennesst = nx.betweenness_centrality(g)
