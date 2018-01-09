@@ -3,9 +3,9 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
+	def __init__(self, pop_size, chromosome_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
 		self.population_size = pop_size
-		self.gene_size = gene_size
+		self.chromosome_size = chromosome_size
 		self.graph_size = graph_size
 		self.selection_mode = selection_mode
 		self.cross_points = cross_points
@@ -25,7 +25,7 @@ class GeneticModel():
 
 		#cria a população inicial e inicializa a lista de avaliação de indivíduos
 		for i in range(self.population_size):
-			temp = random.sample(pop_id, gene_size)
+			temp = random.sample(pop_id, chromosome_size)
 
 			#remove infectados
 			for element in infecteds:
@@ -33,7 +33,7 @@ class GeneticModel():
 					temp.remove(element)
 
 			#completa os elementos restantes
-			while((self.gene_size - len(temp)) > 0):
+			while((self.chromosome_size - len(temp)) > 0):
 				x = random.randint(0, self.graph_size - 1)
 				if((not x in temp) and (not x in infecteds)):
 					temp.append(x)
@@ -99,7 +99,7 @@ class GeneticModel():
 
 			# remove duplicatas
 			temp = list(set(best_parent))
-			while ((self.gene_size - len(temp)) > 0):
+			while ((self.chromosome_size - len(temp)) > 0):
 				x = random.randint(0, self.graph_size - 1)
 				if (x not in temp):
 					temp.append(x)
@@ -166,7 +166,7 @@ class GeneticModel():
 
 			# remove duplicatas
 			temp = list(set(best_parent))
-			while ((self.gene_size - len(temp)) > 0):
+			while ((self.chromosome_size - len(temp)) > 0):
 				x = random.randint(0, self.graph_size - 1)
 				if (x not in temp):
 					temp.append(x)
@@ -215,7 +215,7 @@ class GeneticModel():
 
 			# remove duplicatas
 			temp = list(set(best_parent))
-			while ((self.gene_size - len(temp)) > 0):
+			while ((self.chromosome_size - len(temp)) > 0):
 				x = random.randint(0, self.graph_size - 1)
 				if (x not in temp):
 					temp.append(x)
@@ -264,7 +264,7 @@ class GeneticModel():
 					parent1 = random.randint(0, len(selected_parents) - 1)
 					parent2 = random.randint(0, len(selected_parents) - 1)
 
-				points = random.sample(range(0, self.gene_size), self.cross_points)
+				points = random.sample(range(0, self.chromosome_size), self.cross_points)
 				points.sort()
 
 				child1 = []
@@ -304,7 +304,7 @@ class GeneticModel():
 	def __mutate(self):
 		#print "\n- Mutação: "
 		for i in range(1, self.population_size):
-			for g in range(self.gene_size):
+			for g in range(self.chromosome_size):
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])

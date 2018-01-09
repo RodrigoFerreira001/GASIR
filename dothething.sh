@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 for((number = 0; number < 10; number++)){
-	python gasir_new.py watts_strogatz_500.txt 100 25 -p 0.1 -f y
+	python gasir_new.py watts_strogatz_500.txt 100 25 -p 0.05 -f y
 }
 
 python plot_histogram.py watts_strogatz_500.result 500
 
 for((number = 0; number < 10; number++)){
-	python gasir_new.py watts_strogatz_1000.txt 100 50 -p 0.1 -f y
+	python gasir_new.py watts_strogatz_1000.txt 100 50 -p 0.05 -f y
 }
 
 python plot_histogram.py watts_strogatz_1000.result 1000
 
 
 for((number = 0; number < 10; number++)){
-	python gasir_new.py watts_strogatz_2000.txt 100 100 -p 0.1 -f y
+	python gasir_new.py watts_strogatz_2000.txt 100 100 -p 0.05 -f y
 }
 
 python plot_histogram.py watts_strogatz_2000.result 2000
