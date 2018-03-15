@@ -2,7 +2,7 @@
 import networkx as nx
 import numpy as np
 import ndlib.models.ModelConfig as mc
-import ndlib.models.epidemics.SIRModel as sir
+import ndlib.models.epidemics.SIRModelCustom as sir
 from genetic_model import GeneticModel
 import random
 import sys
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 	parser.add_argument("-p", "--percentage_infected", help = "Initial number of infections", type = float)
 	parser.add_argument("-b", "--beta", help = "Disease tranmission rate", type = float)
 	parser.add_argument("-g", "--gamma", help = "Disease recovery rate", type = float)
+	parser.add_argument("-f", "--fixed", help="Is the value fixed for nodes infections?", type=bool)
 	parser.add_argument("-r", "--result", help = "File with the best individual of the genetic algorithm", type = float)
 
 	args = parser.parse_args()
@@ -61,16 +62,19 @@ if __name__ == '__main__':
 	beta = 0.2857
 	gamma = 0.1428
 
+	fixed = False
+
 	#arquivo de resultado
 	result = None
 	result_detailed = None
 	result_generation_detailed = None
+	result_conv = None
 
 	#selection_mode check
 	if(args.selection_mode):
 		selection_mode = args.selection_mode
 	else:
-		print " - Assumindo modo de seleção como 0"
+		print " - Assumindo modo de seleção como 2"
 
 	#cross_points check
 	if(args.cross_points):
@@ -114,16 +118,28 @@ if __name__ == '__main__':
 	else:
 		print " - Assumindo gamma como 0.1428"
 
+	# fixed check
+	if (args.fixed):
+		fixed = True
+
+		for i in range(graph.number_of_nodes()):
+			graph.node[i]['beta'] = np.random.random_sample()
+			graph.node[i]['gamma'] = np.random.random_sample()
+	else:
+		print " - Assumindo valores não fixos de infecção"
+
 	#result check
 	if(args.result):
 		result = open(args.result, "a+")
 		result_detailed = open(args.result.split(".")[0] + "_detailed" + args.result.split(".")[1], "a+")
 		result_generation_detailed = open(args.result.split(".")[0] + "_generation_detailed" + args.result.split(".")[1], "a+")
+		result_conv = open(args.result.split(".")[0] + "_average" + args.result.split(".")[1], "a+")
 	else:
 		print " - Assumindo arquivo de saída como ", args.graph.split(".")[0] + ".result"
 		result = open(str(args.graph.split(".")[0] + ".result"), "a+")
 		result_detailed = open(str(args.graph.split(".")[0] + "_detailed.result"), "a+")
 		result_generation_detailed = open(str(args.graph.split(".")[0] + "_generation_detailed.result"), "a+")
+		result_conv = open(str(args.graph.split(".")[0] + "_average.result"), "a+")
 
 
 	# ---------- Início -----------
@@ -144,11 +160,60 @@ if __name__ == '__main__':
 	print "Número de infectados: ", len(infected_list), ": ", infected_list
 	print "Tamanho da rede:", graph.number_of_nodes()
 
+	for i, ind in enumerate(ag.population):
+		# Model selection
+		model = sir.SIRModelCustom(graph, fixed_values = False)
+
+		# Model Configuration
+		cfg = mc.Configuration()
+		cfg.add_model_parameter('beta', beta)
+		cfg.add_model_parameter('gamma', gamma)
+
+		# cfg.add_model_parameter("percentage_infected", percentage_infected)
+		cfg.add_model_initial_configuration("Infected", infected_list)
+		cfg.add_model_initial_configuration("Removed", ind)
+
+		# set initial status for the model
+		model.set_initial_status(cfg)
+
+		# count each infected for each simulation
+		infecteds_count = 0
+
+		# # first model iterarion
+		# iteration = model.iteration()
+		#
+		# while ((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
+		# 	if (iteration['status_delta'][1] >= 0):
+		# 		infecteds_count += iteration['status_delta'][1]
+		#
+		# 	# print iteration['node_count']
+		#
+		# 	iteration = model.iteration()
+
+		#model iterarion
+		iteration = model.iteration_bunch(100)
+
+		# atribui fitness
+		ag.individual_performance[i] = iteration[len(iteration) - 1]['node_count'][1] + iteration[len(iteration) - 1]['node_count'][2]
+
+
 	while ag.generation < generations:
 		best = 0
-		for i, ind in enumerate(ag.population):
+
+		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
+
+		#realiza seleção dos pais
+		ag.parents_select()
+
+		print "\nGeração: ", ag.generation
+		print "Melhor: ", ag.best
+		print "Infectados: ", ag.best_performance
+		print " ------------------------ "
+
+		#realiza avaliação dos filhos
+		for i, ind in enumerate(ag.population2):
 			# Model selection
-			model = sir.SIRModel(graph)
+			model = sir.SIRModelCustom(graph, fixed_values = False)
 
 			# Model Configuration
 			cfg = mc.Configuration()
@@ -165,31 +230,53 @@ if __name__ == '__main__':
 			#count each infected for each simulation
 			infecteds_count = 0
 
-			#first model iterarion
-			iteration = model.iteration()
+			# #first model iterarion
+			# iteration = model.iteration()
+			#
+			# while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
+			# 	if(iteration['status_delta'][1] >= 0):
+			# 		infecteds_count += iteration['status_delta'][1]
+			#
+			# 	iteration = model.iteration()
 
-			while((iteration['node_count'][0] > 0) and (iteration['node_count'][1] > 0)):
-				if(iteration['status_delta'][1] >= 0):
-					infecteds_count += iteration['status_delta'][1]
+			#model iterarion
+			iteration = model.iteration_bunch(100)
 
-				iteration = model.iteration()
+			# atribui fitness
+			ag.individual_performance2[i] = iteration[len(iteration) - 1]['node_count'][1] + iteration[len(iteration) - 1]['node_count'][2]
+			model.reset()
 
-			#atribui fitness
-			ag.individual_performance[i] = infecteds_count
+		# performance_average = 0.0
+		# for perf in ag.individual_performance2:
+		# 	performance_average += perf
+        #
+		# result_conv.write(str(perf) + "\n")
 
-		#realiza métodos do ag
-		result_generation_detailed.write(str(ag.generation) + " " + str(ag.best_performance) + " " + str(ag.best) + "\n")
-		ag.parents_select()
-		print "\nGeração: ", ag.generation
-		print "Melhor: ", ag.best
-		print "Infectados: ", ag.best_performance
-		print " ------------------------ "
+		#substitui os pais pelos novos filhos
+		ag.replace()
+
+		performance_average = 0.0
+		for perf in ag.individual_performance:
+			performance_average += perf
+
+		result_conv.write(str(int(performance_average / ag.population_size)) + "\n")
+
+		# performance_average = 0.0
+		# p_tmp = ag.individual_performance[:]
+		# p_tmp.sort()
+        #
+		# for i in range(int(ag.population_size * 0.1)):
+		# 	performance_average += p_tmp[i]
+        #
+		# performance_average /= int(ag.population_size * 0.1)
+		# result_conv.write(str(perf) + "\n")
 
 	print "GLOBAL:"
 	print ag.global_best
 	print ag.global_best_performance
 
 	result_generation_detailed.close()
+	result_conv.close()
 
 	result.write(str(ag.global_best) + "\n")
 	result.close()

@@ -3,9 +3,9 @@ import random
 import sys
 
 class GeneticModel():
-	def __init__(self, pop_size, gene_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
-		self.population_size = pop_size + 1
-		self.gene_size = gene_size
+	def __init__(self, pop_size, chromosome_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
+		self.population_size = pop_size
+		self.chromosome_size = chromosome_size
 		self.graph_size = graph_size
 		self.selection_mode = selection_mode
 		self.cross_points = cross_points
@@ -13,6 +13,8 @@ class GeneticModel():
 		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
+		self.population2 = []
+		self.individual_performance2 = []
 		self.best = []
 		self.best_performance = sys.maxint
 		self.global_best = []
@@ -23,7 +25,7 @@ class GeneticModel():
 
 		#cria a população inicial e inicializa a lista de avaliação de indivíduos
 		for i in range(self.population_size):
-			temp = random.sample(pop_id, gene_size)
+			temp = random.sample(pop_id, chromosome_size)
 
 			#remove infectados
 			for element in infecteds:
@@ -31,13 +33,15 @@ class GeneticModel():
 					temp.remove(element)
 
 			#completa os elementos restantes
-			while((self.gene_size - len(temp)) > 0):
+			while((self.chromosome_size - len(temp)) > 0):
 				x = random.randint(0, self.graph_size - 1)
 				if((not x in temp) and (not x in infecteds)):
 					temp.append(x)
 
 			self.population.append(temp)
 			self.individual_performance.append(0)
+			self.population2.append(temp)
+			self.individual_performance2.append(0)
 
 	def parents_select(self):
 		#print "- Seleção de Pais:"
@@ -90,8 +94,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.chromosome_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -147,9 +161,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
-			#print "- Melhor pai pos: ", best_pos
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.chromosome_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -187,9 +210,18 @@ class GeneticModel():
 					smallest_value = v
 					best_pos = i
 
-			#adiciona o melhor pai
-			parents_list.append(best_pos)
-			#print "- Melhor pai pos: ", best_pos
+			# reserva o melhor pai
+			best_parent = self.population[best_pos][:]
+
+			# remove duplicatas
+			temp = list(set(best_parent))
+			while ((self.chromosome_size - len(temp)) > 0):
+				x = random.randint(0, self.graph_size - 1)
+				if (x not in temp):
+					temp.append(x)
+
+			self.best = temp[:]
+			self.best_performance = self.individual_performance[best_pos]
 
 			#elitismo global
 			if(smallest_value < self.global_best_performance):
@@ -221,50 +253,6 @@ class GeneticModel():
 		#cria a nova população
 		new_population = []
 
-		#reserva o melhor pai
-		best_parent = self.population[selected_parents[0]][:]
-
-		#remove duplicatas
-		temp = list(set(best_parent))
-		while((self.gene_size - len(temp)) > 0):
-			x = random.randint(0, self.graph_size - 1)
-			if(x not in temp):
-				temp.append(x)
-
-		self.best = temp[:]
-		self.best_performance = self.individual_performance[selected_parents[0]]
-
-		#Comente para ser realizado "elitismo guloso"
-		# if(self.individual_performance[selected_parents[0]] < self.best_performance):
-		# 	print "CASO 1:"
-		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
-		# 	print "BEST PERF: ",self.best_performance
-		# 	self.best = best_parent[:]
-		# 	self.best_performance = self.individual_performance[selected_parents[0]]
-		# else:
-		# 	print "CASO 2:"
-		# 	print "IND PERF: ", self.individual_performance[selected_parents[0]]
-		# 	print "BEST PERF: ",self.best_performance
-		# 	best_parent = self.best[:]
-
-		new_population.append(best_parent)
-
-		# if(self.best_performance > self.individual_performance[selected_parents[0]]):
-		# 	self.best = best_parent[:]
-		# 	self.best_performance = self.individual_performance[selected_parents[0]]
-		#
-		# else:
-		# 	new_population.append(self.best[:])
-
-
-		#print "- Melhor pai:"
-		#print best_parent
-
-		#print "\n-Pais selecionados: "
-		#for parent in selected_parents:
-			#print parent
-
-
 		while(len(new_population) < self.population_size):
 			parent1 = 0
 			parent2 = 0
@@ -276,7 +264,7 @@ class GeneticModel():
 					parent1 = random.randint(0, len(selected_parents) - 1)
 					parent2 = random.randint(0, len(selected_parents) - 1)
 
-				points = random.sample(range(0, self.gene_size), self.cross_points)
+				points = random.sample(range(0, self.chromosome_size), self.cross_points)
 				points.sort()
 
 				child1 = []
@@ -308,25 +296,34 @@ class GeneticModel():
 				new_population.append(child2)
 
 		#remover ultimo filho?
-		self.population = new_population[:]
+		self.population2 = new_population[:]
 
 		#inicializa mutação
 		self.__mutate()
 
 	def __mutate(self):
 		#print "\n- Mutação: "
-		for i in range(1, len(self.population)):
-			for g in range(self.gene_size):
+		for i in range(1, self.population_size):
+			for g in range(self.chromosome_size):
 				x = random.random()
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
 					r = random.randint(0, self.graph_size - 1);
-					if(r not in self.population[i]):
-						self.population[i][g] = r
+					if(r not in self.population2[i]):
+						self.population2[i][g] = r
 					else:
-						while(r in self.population[i]):
+						while(r in self.population2[i]):
 							r = random.randint(0, self.graph_size - 1);
-						self.population[i][g] = r
+						self.population2[i][g] = r
 
-		#avança a geração
+	def replace(self):
+		for i in range(self.population_size):
+			if (self.individual_performance2[i] < self.individual_performance[i]):
+				self.individual_performance[i] = self.individual_performance2[i]
+				self.population[i] = self.population2[i][:]
+
+		# avança a geração
 		self.generation += 1
+
+
+
