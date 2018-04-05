@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import random
 import sys
+from multiprocessing import Manager
 
 class GeneticModel():
 	def __init__(self, pop_size, chromosome_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
+		self.manager = Manager()
 		self.population_size = pop_size
 		self.chromosome_size = chromosome_size
 		self.graph_size = graph_size
@@ -13,8 +15,10 @@ class GeneticModel():
 		self.cross_l = cross_l
 		self.population = []
 		self.individual_performance = []
+		#self.individual_performance = self.manager.list()
 		self.population2 = []
 		self.individual_performance2 = []
+		#self.individual_performance2 = self.manager.list()
 		self.best = []
 		self.best_performance = sys.maxint
 		self.global_best = []

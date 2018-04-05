@@ -31,3 +31,5 @@ python plot_performance.py 100 100 watts_strogatz_2000_generation_detailed.resul
 python graph_info.py watts_strogatz_500.txt
 python graph_info.py watts_strogatz_1000.txt
 python graph_info.py watts_strogatz_2000.txt
+
+
