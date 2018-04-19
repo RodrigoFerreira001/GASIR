@@ -20,5 +20,5 @@ for p in pop:
 
 			print "# G " + g + " P " + p + "M " + m
 			print "for((number = 0; number < 100; number++)){"
-			print "\t python gasir.py " + filename + " " + p + " 127 --mutation " +  str(int(m) / 100.0) + " --generations " + g
+			print "\t python gasir.py moreno_health/" + filename + " " + p + " 127 --mutation " +  str(int(m) / 100.0) + " --generations " + g
 			print "}\n\n"
