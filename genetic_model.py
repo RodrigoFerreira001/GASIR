@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import random
 import sys
-from multiprocessing import Manager
+from multiprocessing import Array
 
 class GeneticModel():
 	def __init__(self, pop_size, chromosome_size, graph_size, infecteds, selection_mode, cross_points, mutation, cross_l):
-		self.manager = Manager()
 		self.population_size = pop_size
 		self.chromosome_size = chromosome_size
 		self.graph_size = graph_size
@@ -14,11 +13,11 @@ class GeneticModel():
 		self.mutation = mutation
 		self.cross_l = cross_l
 		self.population = []
-		self.individual_performance = []
-		#self.individual_performance = self.manager.list()
+		#self.individual_performance = []
+		self.individual_performance  = Array('i', range(pop_size), lock=False)
 		self.population2 = []
-		self.individual_performance2 = []
-		#self.individual_performance2 = self.manager.list()
+		#self.individual_performance2 = []
+		self.individual_performance2 = Array('i', range(pop_size), lock=False)
 		self.best = []
 		self.best_performance = sys.maxint
 		self.global_best = []
@@ -43,9 +42,9 @@ class GeneticModel():
 					temp.append(x)
 
 			self.population.append(temp)
-			self.individual_performance.append(0)
+			#self.individual_performance.append(0)
 			self.population2.append(temp)
-			self.individual_performance2.append(0)
+			#self.individual_performance2.append(0)
 
 	def parents_select(self):
 		#print "- Seleção de Pais:"
@@ -271,30 +270,33 @@ class GeneticModel():
 				points = random.sample(range(0, self.chromosome_size), self.cross_points)
 				points.sort()
 
-				child1 = []
-				child2 = []
-				for i in range(len(points)):
-					if(i == 0):
-						if((i % 2) == 0):
-							child1 += self.population[selected_parents[parent1]][ :points[i]]
-							child2 += self.population[selected_parents[parent2]][ :points[i]]
-						else:
-							child1 += self.population[selected_parents[parent2]][ :points[i]]
-							child2 += self.population[selected_parents[parent1]][ :points[i]]
-					else:
-						if((i % 2) == 0):
-							child1 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
-							child2 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
-						else:
-							child1 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
-							child2 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+				chromosome = list(set(self.population[selected_parents[parent1]]).union(self.population[selected_parents[parent2]]))
+				child1 = random.sample(chromosome, self.chromosome_size)
+				child2 = random.sample(chromosome, self.chromosome_size)
 
-				if((len(points) % 2) == 0):
-					child1 += self.population[selected_parents[parent1]][points[-1]: ]
-					child2 += self.population[selected_parents[parent2]][points[-1]: ]
-				else:
-					child1 += self.population[selected_parents[parent2]][points[-1]: ]
-					child2 += self.population[selected_parents[parent1]][points[-1]: ]
+
+				# for i in range(len(points)):
+				# 	if(i == 0):
+				# 		if((i % 2) == 0):
+				# 			child1 += self.population[selected_parents[parent1]][ :points[i]]
+				# 			child2 += self.population[selected_parents[parent2]][ :points[i]]
+				# 		else:
+				# 			child1 += self.population[selected_parents[parent2]][ :points[i]]
+				# 			child2 += self.population[selected_parents[parent1]][ :points[i]]
+				# 	else:
+				# 		if((i % 2) == 0):
+				# 			child1 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+				# 			child2 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+				# 		else:
+				# 			child1 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+				# 			child2 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+                #
+				# if((len(points) % 2) == 0):
+				# 	child1 += self.population[selected_parents[parent1]][points[-1]: ]
+				# 	child2 += self.population[selected_parents[parent2]][points[-1]: ]
+				# else:
+				# 	child1 += self.population[selected_parents[parent2]][points[-1]: ]
+				# 	child2 += self.population[selected_parents[parent1]][points[-1]: ]
 
 				new_population.append(child1)
 				new_population.append(child2)

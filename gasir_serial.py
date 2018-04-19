@@ -5,7 +5,6 @@ import ndlib.models.ModelConfig as mc
 import ndlib.models.epidemics.SIRModel as sir
 from genetic_model import GeneticModel
 import random
-from multiprocessing import Process, Array
 import argparse
 
 ag = None
@@ -13,76 +12,6 @@ graph = None
 beta = None
 gamma = None
 infected_list = None
-
-def initial_evaluation(process_id, num_process):
-	ini = ((ag.population_size / num_process) * process_id)
-	fim = 0
-
-	if (process_id == (num_process - 1)):
-		fim = ((ag.population_size / num_process) * process_id) + (ag.population_size / num_process) + (
-					ag.population_size % num_process)
-	else:
-		fim = ((ag.population_size / num_process) * process_id) + (ag.population_size / num_process)
-
-	for index in range(ini, fim):
-		# Model selection
-		model = sir.SIRModel(graph)
-
-		# Model Configuration
-		cfg = mc.Configuration()
-		cfg.add_model_parameter('beta', beta)
-		cfg.add_model_parameter('gamma', gamma)
-
-		# cfg.add_model_parameter("percentage_infected", percentage_infected)
-		cfg.add_model_initial_configuration("Infected", infected_list)
-		cfg.add_model_initial_configuration("Removed", ag.population[index])
-
-		# set initial status for the model
-		model.set_initial_status(cfg)
-
-		#model iterarion
-		iteration = model.iteration_bunch(100)
-
-		# atribui fitness
-		ag.individual_performance[index] = iteration[len(iteration) - 1]['node_count'][1] + iteration[len(iteration) - 1]['node_count'][2]
-
-def evaluate_population(process_id, num_process):
-	# realiza avaliação dos filhos
-
-	ini = ((ag.population_size / num_process) * process_id)
-	fim = 0
-
-	if(process_id == (num_process - 1)):
-		fim = ((ag.population_size / num_process) * process_id) + (ag.population_size / num_process) + (ag.population_size % num_process)
-	else:
-		fim = ((ag.population_size / num_process) * process_id) + (ag.population_size / num_process)
-
-	for index in range(ini, fim):
-		# Model selection
-		model = sir.SIRModel(graph)
-
-		# Model Configuration
-		cfg = mc.Configuration()
-		cfg.add_model_parameter('beta', beta)
-		cfg.add_model_parameter('gamma', gamma)
-
-		# cfg.add_model_parameter("percentage_infected", percentage_infected)
-		cfg.add_model_initial_configuration("Infected", infected_list)
-		cfg.add_model_initial_configuration("Removed", ag.population2[index])
-
-		# set initial status for the model
-		model.set_initial_status(cfg)
-
-		# model iterarion
-		iteration = model.iteration_bunch(100)
-
-		# atribui fitness
-		ag.individual_performance2[index] = iteration[len(iteration) - 1]['node_count'][1] + \
-										iteration[len(iteration) - 1]['node_count'][2]
-
-		#ind_perf2 = iteration[len(iteration) - 1]['node_count'][1] + \
-		#								iteration[len(iteration) - 1]['node_count'][2]
-		model.reset()
 
 if __name__ == '__main__':
 
@@ -107,8 +36,7 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 
 	#graph
-	#graph = nx.read_adjlist(args.graph, nodetype = int)
-	graph = nx.read_edgelist(args.graph, nodetype = int)
+	graph = nx.read_adjlist(args.graph, nodetype = int)
 
 	#population_size
 	population_size = args.population_size
@@ -226,15 +154,30 @@ if __name__ == '__main__':
 	print "Número de infectados: ", len(infected_list), ": ", infected_list
 	print "Tamanho da rede:", graph.number_of_nodes()
 
-	#iteração inicial
-	process_list_init = []
-	for pid in range(8):
-		p0 = Process(target=initial_evaluation, args=(pid, 8))
-		process_list_init.append(p0)
-		p0.start()
+	for i, ind in enumerate(ag.population):
+		# Model selection
+		model = sir.SIRModel(graph)
 
-	for pid in range(8):
-		process_list_init[pid].join()
+		# Model Configuration
+		cfg = mc.Configuration()
+		cfg.add_model_parameter('beta', beta)
+		cfg.add_model_parameter('gamma', gamma)
+
+		# cfg.add_model_parameter("percentage_infected", percentage_infected)
+		cfg.add_model_initial_configuration("Infected", infected_list)
+		cfg.add_model_initial_configuration("Removed", ind)
+
+		# set initial status for the model
+		model.set_initial_status(cfg)
+
+		# count each infected for each simulation
+		infecteds_count = 0
+
+		#model iterarion
+		iteration = model.iteration_bunch(100)
+
+		# atribui fitness
+		ag.individual_performance[i] = iteration[len(iteration) - 1]['node_count'][1] + iteration[len(iteration) - 1]['node_count'][2]
 
 
 	while ag.generation < generations:
@@ -250,14 +193,32 @@ if __name__ == '__main__':
 		print "Infectados: ", ag.best_performance
 		print " ------------------------ "
 
-		process_list = []
-		for pid in range(8):
-			p = Process(target=evaluate_population, args=(pid, 8))
-			process_list.append(p)
-			p.start()
+		#realiza avaliação dos filhos
+		for i, ind in enumerate(ag.population2):
+			# Model selection
+			model = sir.SIRModel(graph)
 
-		for pid in range(8):
-			process_list[pid].join()
+			# Model Configuration
+			cfg = mc.Configuration()
+			cfg.add_model_parameter('beta', beta)
+			cfg.add_model_parameter('gamma', gamma)
+
+			#cfg.add_model_parameter("percentage_infected", percentage_infected)
+			cfg.add_model_initial_configuration("Infected", infected_list)
+			cfg.add_model_initial_configuration("Removed", ind)
+
+			#set initial status for the model
+			model.set_initial_status(cfg)
+
+			#count each infected for each simulation
+			infecteds_count = 0
+
+			#model iterarion
+			iteration = model.iteration_bunch(100)
+
+			# atribui fitness
+			ag.individual_performance2[i] = iteration[len(iteration) - 1]['node_count'][1] + iteration[len(iteration) - 1]['node_count'][2]
+			model.reset()
 
 		#substitui os pais pelos novos filhos
 		ag.replace()
