@@ -274,7 +274,9 @@ class GeneticModel():
 				child1 = random.sample(chromosome, self.chromosome_size)
 				child2 = random.sample(chromosome, self.chromosome_size)
 
-
+				# child1 = []
+				# child2 = []
+                #
 				# for i in range(len(points)):
 				# 	if(i == 0):
 				# 		if((i % 2) == 0):
