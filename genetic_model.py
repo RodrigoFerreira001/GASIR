@@ -23,6 +23,7 @@ class GeneticModel():
 		self.global_best = []
 		self.global_best_performance = sys.maxint
 		self.generation = 0
+		self.infecteds = infecteds
 
 		pop_id = range(self.graph_size - 1)
 
@@ -270,35 +271,48 @@ class GeneticModel():
 				points = random.sample(range(0, self.chromosome_size), self.cross_points)
 				points.sort()
 
-				chromosome = list(set(self.population[selected_parents[parent1]]).union(self.population[selected_parents[parent2]]))
-				child1 = random.sample(chromosome, self.chromosome_size)
-				child2 = random.sample(chromosome, self.chromosome_size)
+				#chromosome = list(set(self.population[selected_parents[parent1]]).union(self.population[selected_parents[parent2]]))
+				# child1 = random.sample(chromosome, self.chromosome_size)
+				# child2 = random.sample(chromosome, self.chromosome_size)
 
-				# child1 = []
-				# child2 = []
-                #
-				# for i in range(len(points)):
-				# 	if(i == 0):
-				# 		if((i % 2) == 0):
-				# 			child1 += self.population[selected_parents[parent1]][ :points[i]]
-				# 			child2 += self.population[selected_parents[parent2]][ :points[i]]
-				# 		else:
-				# 			child1 += self.population[selected_parents[parent2]][ :points[i]]
-				# 			child2 += self.population[selected_parents[parent1]][ :points[i]]
-				# 	else:
-				# 		if((i % 2) == 0):
-				# 			child1 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
-				# 			child2 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
-				# 		else:
-				# 			child1 += self.population[selected_parents[parent2]][points[i-1] : points[i]]
-				# 			child2 += self.population[selected_parents[parent1]][points[i-1] : points[i]]
-                #
-				# if((len(points) % 2) == 0):
-				# 	child1 += self.population[selected_parents[parent1]][points[-1]: ]
-				# 	child2 += self.population[selected_parents[parent2]][points[-1]: ]
-				# else:
-				# 	child1 += self.population[selected_parents[parent2]][points[-1]: ]
-				# 	child2 += self.population[selected_parents[parent1]][points[-1]: ]
+				child1_tmp = []
+				child2_tmp = []
+
+				for i in range(len(points)):
+					if(i == 0):
+						if((i % 2) == 0):
+							child1_tmp += self.population[selected_parents[parent1]][ :points[i]]
+							child2_tmp += self.population[selected_parents[parent2]][ :points[i]]
+						else:
+							child1_tmp += self.population[selected_parents[parent2]][ :points[i]]
+							child2_tmp += self.population[selected_parents[parent1]][ :points[i]]
+					else:
+						if((i % 2) == 0):
+							child1_tmp += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+							child2_tmp += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+						else:
+							child1_tmp += self.population[selected_parents[parent2]][points[i-1] : points[i]]
+							child2_tmp += self.population[selected_parents[parent1]][points[i-1] : points[i]]
+
+				if((len(points) % 2) == 0):
+					child1_tmp += self.population[selected_parents[parent1]][points[-1]: ]
+					child2_tmp += self.population[selected_parents[parent2]][points[-1]: ]
+				else:
+					child1_tmp += self.population[selected_parents[parent2]][points[-1]: ]
+					child2_tmp += self.population[selected_parents[parent1]][points[-1]: ]
+
+				child1 = list(set(child1_tmp))
+				child2 = list(set(child2_tmp))
+
+				while(len(child1) < self.chromosome_size):
+					gene = random.choice(child2)
+					if(gene not in child1):
+						child1.append(gene)
+
+				while (len(child2) < self.chromosome_size):
+					gene = random.choice(child1)
+					if (gene not in child2):
+						child2.append(gene)
 
 				new_population.append(child1)
 				new_population.append(child2)
@@ -317,10 +331,10 @@ class GeneticModel():
 				if(x < self.mutation):
 					#print "i:", i, "| g:", g, "| LEN pop: ", len(self.population), "| LEN gene: ", len(self.population[i])
 					r = random.randint(0, self.graph_size - 1);
-					if(r not in self.population2[i]):
+					if((r not in self.population2[i]) and (r not in self.infecteds)):
 						self.population2[i][g] = r
 					else:
-						while(r in self.population2[i]):
+						while((r in self.population2[i]) or (r  in self.infecteds)):
 							r = random.randint(0, self.graph_size - 1);
 						self.population2[i][g] = r
 

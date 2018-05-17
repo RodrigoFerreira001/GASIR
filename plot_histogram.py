@@ -47,7 +47,10 @@ ibar =  plt.bar(y_pos, histogram, align='center', alpha=0.5)
 for i,element in enumerate(ibar):
 	norm = colors.Normalize(0.0, 1.0)
 	color = plt.cm.winter(norm(histogram[i]/highest_value))
-	element.set_color(color)
+	if((i == 17) or (i == 18) or (i == 29) or (i == 30) or (i == 38) or (i == 49) or (i == 52) or (i == 53)):
+		element.set_color((1.0, 0.1, 0.1, 1.0))
+	else:
+		element.set_color(color)
 #plt.xticks(y_pos, objects)
 plt.xlabel('Individuo')
 plt.ylabel('Vezes Selecionado')
