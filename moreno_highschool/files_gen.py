@@ -3,9 +3,9 @@ import os
 #graph = open("moreno_highschool.txt", "r")
 #ef = graph.read()
 
-pop = ["50","100","200"]
-gen = ["50", "100", "200"]
-mut = ["1","5","10"]
+pop = ["400"]
+gen = ["50", "200"]
+mut = ["5","10"]
 
 for p in pop:
 	for g in gen:
@@ -18,9 +18,9 @@ for p in pop:
 			#of.write(ef)
 			#of.close()
 
-			#print "# G " + g + " P " + p + "M " + m
-			#print "for((number = 0; number < 100; number++)){"
-			#print "\t python gasir.py moreno_highschool/" + filename + " " + p + " 8 --mutation " +  str(int(m) / 100.0) + " --generations " + g + " --infecteds 21"
-			#print "}\n\n"
+			# print "# G " + g + " P " + p + "M " + m
+			# print "for((number = 0; number < 100; number++)){"
+			# print "\t python gasir.py moreno_highschool/" + filename + " " + p + " 8 --mutation " +  str(int(m) / 100.0) + " --generations " + g + " --infecteds 21"
+			# print "}\n\n"
 
 			print "python plot_histogram.py moreno_highschool/" + filename + " 70"

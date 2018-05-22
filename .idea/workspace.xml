@@ -3,10 +3,198 @@
   <component name="ChangeListManager">
     <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genetic_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetic_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bash.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P100/moreno_highschool_G100_P100_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P200/moreno_highschool_G100_P200_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G100P50/moreno_highschool_G100_P50_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P200/moreno_highschool_G200_P200_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P50/moreno_highschool_G200_P50_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P100/moreno_highschool_G50_P100_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P200/moreno_highschool_G50_P200_M5_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M10_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M1_generation_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5_average.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5_detailed.result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P50/moreno_highschool_G50_P50_M5_generation_detailed.result" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/moreno_highschool/files_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/moreno_highschool/files_gen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/plot_all.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_histogram.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,29 +205,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gasir.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gasir.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-813">
-              <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="genetic_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/genetic_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="339" selection-start-line="339" selection-end-line="339" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dothething.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dothething.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="56" />
+            <state relative-caret-position="230">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" selection-end-column="119" />
             </state>
           </provider>
         </entry>
@@ -47,26 +217,35 @@
       <file leaf-file-name="files_gen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/moreno_highschool/files_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+            <state relative-caret-position="375">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plot_all.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot_all.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="91" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_histogram.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plot_histogram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plot_histogram.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plot_all.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plot_all.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plot_performance.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_performance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -123,9 +302,10 @@
         <option value="$PROJECT_DIR$/darwin_batch_moreno.sh" />
         <option value="$PROJECT_DIR$/bash_highschool.sh" />
         <option value="$PROJECT_DIR$/genetic_model.py" />
+        <option value="$PROJECT_DIR$/plot_histogram.py" />
+        <option value="$PROJECT_DIR$/bash.sh" />
         <option value="$PROJECT_DIR$/moreno_highschool/files_gen.py" />
         <option value="$PROJECT_DIR$/plot_all.sh" />
-        <option value="$PROJECT_DIR$/plot_histogram.py" />
       </list>
     </option>
   </component>
@@ -177,7 +357,7 @@
               <item name="GASIR" type="b2602c69:ProjectViewProjectNode" />
               <item name="GASIR" type="462c0819:PsiDirectoryNode" />
               <item name="moreno_highschool" type="462c0819:PsiDirectoryNode" />
-              <item name="G200P100" type="462c0819:PsiDirectoryNode" />
+              <item name="G50P400" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -231,7 +411,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33104396" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -252,6 +432,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/plot_histogram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/erdos_renyi_500.txt" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_500.txt" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_1000.txt" />
@@ -279,13 +466,6 @@
     <entry file="file://$PROJECT_DIR$/watts_strogatz_1000_generation_detailed.result" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_1000_detailed.result" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_1000_average.result" />
-    <entry file="file://$PROJECT_DIR$/plot_performance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gasir.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2211">
@@ -310,9 +490,6 @@
           <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moreno_health/G200P100/moreno_health_G200_P100_M1_average.result">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/darwin_batch_moreno.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -345,60 +522,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bash_highschool.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moreno_highschool_average.result">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7134" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bash_highschool.sh" />
+    <entry file="file://$PROJECT_DIR$/moreno_highschool_average.result" />
     <entry file="file://$PROJECT_DIR$/gasir.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-813">
+        <state relative-caret-position="2175">
           <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/genetic_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="5055">
           <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plot_histogram_mean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dothething.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moreno_highschool/G200P100/moreno_highschool_G200_P100_M10.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moreno_highschool/files_gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plot_all.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="91" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -406,6 +542,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bash.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_histogram_mean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moreno_highschool/files_gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dothething.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_performance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_all.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
         </state>
       </provider>
     </entry>
