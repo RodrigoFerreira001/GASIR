@@ -69,7 +69,7 @@ for i in avg_perf:
         teto_m = i
 
 #melhor caso
-plt.plot(range(len(p_matrix[best_performance_pos])), p_matrix[best_performance_pos], 'ro')
+plt.plot(range(len(p_matrix[best_performance_pos])), p_matrix[best_performance_pos], 'r-')
 plt.axis([0, len(p_matrix[best_performance_pos]), 0, teto_b])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
@@ -78,7 +78,7 @@ plt.savefig(sys.argv[3].split(".")[0] + "_melhor_.svg", format="svg")
 plt.clf()
 
 #pior caso
-plt.plot(range(len(p_matrix[wrost_performance_pos])), p_matrix[wrost_performance_pos], 'ro')
+plt.plot(range(len(p_matrix[wrost_performance_pos])), p_matrix[wrost_performance_pos], 'r-')
 plt.axis([0, len(p_matrix[wrost_performance_pos]), 0, teto_w])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
@@ -87,7 +87,7 @@ plt.savefig(sys.argv[3].split(".")[0] + "_pior_.svg", format="svg")
 plt.clf()
 
 #média
-plt.plot(range(len(avg_perf)), avg_perf, 'ro')
+plt.plot(range(len(avg_perf)), avg_perf, 'r-')
 plt.axis([0, len(avg_perf), 0, teto_m])
 plt.xlabel('Geracoes')
 plt.ylabel('Individuos Infectados')
