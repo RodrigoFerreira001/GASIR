@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4eff30bb-d226-47b4-b82e-b46722193d94" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10_average.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M10_generation_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5_average.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G200P400/moreno_highschool_G200_P400_M5_generation_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10_average.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M10_generation_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_average.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_generation_detailed.result" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_generation_detailed_media_.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_generation_detailed_melhor_.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/G50P400/moreno_highschool_G50_P400_M5_generation_detailed_pior_.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/moreno_highschool/files_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/moreno_highschool/files_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/plot_all.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_performance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bash.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_adjust.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_adjust.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,35 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="files_gen.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moreno_highschool/files_gen.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_all.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plot_all.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plot_performance.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plot_performance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,6 +26,8 @@
     <findStrings>
       <find>gasir_new</find>
       <find>.txt</find>
+      <find>1</find>
+      <find>1</find>
     </findStrings>
     <replaceStrings>
       <replace>gasir</replace>
@@ -125,10 +67,12 @@
         <option value="$PROJECT_DIR$/bash_highschool.sh" />
         <option value="$PROJECT_DIR$/genetic_model.py" />
         <option value="$PROJECT_DIR$/plot_histogram.py" />
-        <option value="$PROJECT_DIR$/bash.sh" />
         <option value="$PROJECT_DIR$/moreno_highschool/files_gen.py" />
         <option value="$PROJECT_DIR$/plot_all.sh" />
         <option value="$PROJECT_DIR$/plot_performance.py" />
+        <option value="$PROJECT_DIR$/redes/hep/hep.txt" />
+        <option value="$PROJECT_DIR$/graph_adjust.py" />
+        <option value="$PROJECT_DIR$/bash.sh" />
       </list>
     </option>
   </component>
@@ -170,11 +114,6 @@
             <path>
               <item name="GASIR" type="b2602c69:ProjectViewProjectNode" />
               <item name="GASIR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GASIR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GASIR" type="462c0819:PsiDirectoryNode" />
-              <item name="moreno_highschool" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,7 +158,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -249,17 +187,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plot_histogram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erdos_renyi_500.txt" />
-    <entry file="file://$PROJECT_DIR$/watts_strogatz_500.txt" />
-    <entry file="file://$PROJECT_DIR$/erdos_renyi_1000.txt" />
-    <entry file="file://$PROJECT_DIR$/erdos_renyi_500.sample" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_1000.sample" />
     <entry file="file://$PROJECT_DIR$/erdos_renyi_2000.sample" />
     <entry file="file://$PROJECT_DIR$/watts_strogatz_2000.info" />
@@ -334,24 +261,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bash_highschool.sh" />
     <entry file="file://$PROJECT_DIR$/moreno_highschool_average.result" />
-    <entry file="file://$PROJECT_DIR$/gasir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/genetic_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5055">
           <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bash.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -401,6 +314,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gasir.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1002">
+          <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redes/email_enron/email_enron.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="367662" lean-forward="true" selection-end-line="367662" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redes/hep/hep.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redes/cagrqc/cagrqc_ad.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bash.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_adjust.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redes/cagrqc/cagrqc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
